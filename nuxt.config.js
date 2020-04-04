@@ -23,6 +23,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    transpile: ['jquery'],
     /*
     ** Run ESLint on save
     */
@@ -47,7 +48,8 @@ module.exports = {
       saveUninitialized: true,
       cookie: { maxAge: 60000 }
     }),
-    '~/api'
-  ]
-}
+    {path: '/api', handler: '~/api/index.js'}
+  ],
+  watch: ['~/api/index.js']
+};
 

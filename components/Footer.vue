@@ -3,20 +3,20 @@
     <div class="wrapper footer__wrapper">
       <div class="social">
         <div class="social__button">
-          <i class="fab fa-facebook social__icon"></i>
-          <span class="social__text">Подписаться</span>
+          <i class="fab fa-facebook social__button-icon"></i>
+          <span class="social__button-text">Подписаться</span>
         </div>
         <div class="social__button">
-          <i class="fab fa-twitter social__icon"></i>
-          <span class="social__text">Подписаться</span>
+          <i class="fab fa-twitter social__button-icon"></i>
+          <span class="social__button-text">Подписаться</span>
         </div>
         <div class="social__button">
-          <i class="fab fa-instagram social__icon"></i>
-          <span class="social__text">Подписаться</span>
+          <i class="fab fa-instagram social__button-icon"></i>
+          <span class="social__button-text">Подписаться</span>
         </div>
         <div class="social__button">
-          <i class="fab fa-twitch social__icon"></i>
-          <span class="social__text">Подписаться</span>
+          <i class="fab fa-twitch social__button-icon"></i>
+          <span class="social__button-text">Подписаться</span>
         </div>
       </div>
       <div class="copyright">
@@ -35,9 +35,10 @@
   }
 
   .footer__wrapper {
-    padding: 50px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 50px;
   }
 
   .social {
@@ -45,18 +46,15 @@
   }
 
   .social__button {
-    margin-left: 15px;
+    margin-right: 15px;
   }
 
-  .social__icon {
+  .social__button-icon {
     font-size: 20px;
+    margin-right: 5px;
   }
 
-  .social__text {
-    margin-left: 5px;
-  }
+  .social__button-text {
 
-  .social__button:first-child {
-    margin-left: 0;
   }
 </style>

@@ -41,7 +41,6 @@ router.get('/fraction/', async (req, res) => {
     let resp = await req.apiClient.get('/fraction/');
     res.json(resp.data);
   } catch (e) {
-    console.log(e);
     res.status(e.response.status).json(e.response.data);
   }
 });
@@ -53,7 +52,21 @@ router.post('/login/', async (req, res) => {
     req.session.api_refresh_token = resp.data['refresh_token'];
     res.sendStatus(200);
   } catch (e) {
-    console.log(e.request);
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
+router.post('/register/', async (req, res) => {
+  try {
+    await req.apiClient.post('/register/', req.body);
+    let resp = await req.apiClient.post('/login/', {
+      login: req.body.login,
+      password: req.body.password
+    });
+    req.session.api_token = resp.data['token'];
+    req.session.api_refresh_token = resp.data['refresh_token'];
+    res.sendStatus(200);
+  } catch (e) {
     res.status(e.response.status).json(e.response.data);
   }
 });
@@ -69,7 +82,4 @@ router.post('/logout/', async (req, res) => {
   }
 });
 
-export default {
-  path: '/api',
-  handler: router
-}
+export default router;

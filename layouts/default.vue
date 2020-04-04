@@ -1,12 +1,21 @@
 <template>
-  <div>
-    <custom-header/>
-    <nuxt/>
-    <custom-footer/>
+  <div class="main">
+    <div class="main__header">
+      <custom-header/>
+    </div>
+    <div class="main__content">
+      <div class="wrapper">
+        <div class="main-content">
+          <nuxt/>
+        </div>
+      </div>
+    </div>
+    <div class="main__footer">
+      <custom-footer/>
+    </div>
   </div>
 </template>
 <script>
-  // import '~/assets/fontawesome/js/all.js';
   import Header from '~/components/Header';
   import Footer from '~/components/Footer';
 
@@ -35,6 +44,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background: #000000;
+    color: #ffffff;
+  }
+
+  button, input {
+    outline: none;
   }
 
   a {
@@ -43,8 +58,31 @@
   }
 
   .wrapper {
-    width: 1200px;
+    width: 1450px;
     margin: 0 auto;
+  }
+
+  .main {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+  }
+
+  .main__header,
+  .main__footer {
+    flex: none;
+  }
+
+  .main__content {
+    flex: auto;
+  }
+
+  .main-content {
+    padding: 20px 0;
+  }
+
+  .main-center-wrapper {
+    padding: 150px 0 50px;
   }
 </style>
 

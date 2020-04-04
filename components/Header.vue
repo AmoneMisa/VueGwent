@@ -2,34 +2,32 @@
   <div class="header">
     <div class="wrapper header__wrapper">
       <div class="header__logo">
-        <a href="/index.html">
-          <img src="/imgs/logo/logo.png">
-        </a>
+        <nuxt-link class="logo" to="/">Гвинт</nuxt-link>
       </div>
       <div class="header__menu">
-        <div class="menu__item"><a href="/pages/card-decks/index.html">Колоды</a></div>
-        <div class="menu__item">Лобби</div>
-        <div class="menu__item"><a href="/pages/game-field/index.html">Игра</a></div>
-        <div class="menu__item">Правила игры</div>
-        <div class="menu__item">Связь с нами</div>
-      </div>
-      <div class="personal-area">
-        <div class="personal-area__img">
-          <img src="#" class="personal-area__user-logo">
-          <i class="fa fa-user-plus personal-area__icon"></i>
+        <div class="menu">
+          <div class="menu__item"><nuxt-link to="/deck/">Колоды</nuxt-link></div>
+          <div class="menu__item"><nuxt-link to="/lobby/">Лобби</nuxt-link></div>
+          <div class="menu__item"><nuxt-link to="/game-field/">Игра</nuxt-link></div>
+          <div class="menu__item"><a href="#">Правила игры</a></div>
+          <div class="menu__item"><a href="#">Связь с нами</a></div>
         </div>
-        <div class="personal-area__text">
-          <div class="personal-area__username">Здравствуй,
-            <span class="personal-area__user" v-if="user">{{ user.login }}</span>
-            <span class="personal-area__user" v-else>Гость</span>
-          </div>
-          <div class="personal-area__actions" v-if="user">
-            <span class="personal-area__enter text__item personal-area__action"><a href="/pages/personal-area/index.html">Личный кабинет</a></span>
-            <span class="personal-area__exit text__item personal-area__action" @click="logout">Выйти</span>
-          </div>
-          <div class="personal-area__actions" v-else>
-            <span class="personal-area__exit text__item personal-area__action"><a href="./index.html">Войти</a></span>
-            <span class="personal-area__registration text__item personal-area__action"><a href="./index.html">Зарегистрироваться</a></span>
+      </div>
+      <div class="header__personal-area">
+        <div class="personal-area">
+          <nuxt-link class="personal-area__avatar" to="/personal-area/" v-if="user">
+            <img src="#" class="personal-area__avatar-img">
+            <i class="fa fa-user personal-area__avatar-icon"></i>
+          </nuxt-link>
+          <div class="personal-area__content">
+            <div class="personal-area__links" v-if="user">
+              <nuxt-link class="personal-area__link" to="/personal-area/">{{ user.login }}</nuxt-link>
+              <span class="personal-area__link" @click.prevent="logout">Выйти</span>
+            </div>
+            <div class="personal-area__links" v-else>
+              <nuxt-link class="personal-area__link" to="/">Вход</nuxt-link>
+              <nuxt-link class="personal-area__link" to="/register/">Регистрация</nuxt-link>
+            </div>
           </div>
         </div>
       </div>
@@ -48,6 +46,7 @@
       logout: async function () {
         await this.$axios.$post('/api/logout/');
         await this.$store.dispatch('user/logout');
+        this.$nuxt.context.redirect('/');
       }
     }
   }
@@ -63,29 +62,49 @@
   .header__wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 50px;
   }
 
   .header__logo {
-    width: 200px;
-    padding: 0 20px;
+    margin-right: 40px;
+    flex: none;
   }
 
   .header__menu {
+    margin-right: 20px;
+    flex: auto;
+  }
+
+  .header__personal-area {
+    flex: none;
+  }
+
+  .logo {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 24px;
+  }
+
+  .logo__img {
+    vertical-align: top;
+  }
+
+  .menu {
     display: flex;
-    margin: 30px 20px;
-    justify-content: space-between;
   }
 
   .menu__item {
-    color: rgba(240, 165, 38, 0.6);
     font-size: 16px;
-    margin-left: 20px;
-    cursor: pointer;
-    transition: color .3s ease-in-out;
+    margin-right: 20px;
 
     a {
-      color: rgba(240, 165, 38, 0.6);
+      color: #bc8e46;
       transition: color .3s ease-in-out;
+
+      &:hover {
+        color: #886633;
+      }
     }
   }
 
@@ -96,34 +115,44 @@
   .personal-area {
     color: white;
     display: flex;
-    width: 300px;
-    flex: none;
-    justify-content: space-evenly;
-    border-left: 2px solid #8b7f67;
+    align-items: center;
   }
 
-  .personal-area__img {
-    width: 50px;
-    height: 50px;
+  .personal-area__avatar {
+    width: 32px;
+    height: 32px;
     border-radius: 360px;
     background-color: white;
-    margin-top: 20px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
   }
 
-  .personal-area__icon {
-    font-size: 26px;
+  .personal-area__avatar-icon {
+    font-size: 14px;
     color: rgba(240, 165, 38, 0.6);
-    margin-top: 10px;
   }
 
-  .personal-area__text {
+  .personal-area__avatar-img {
+    display: none;
+  }
+
+  .personal-area__content {
     font-size: 16px;
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
-    margin-left: 10px;
     flex: none;
+  }
+
+  .personal-area__links {
+    display: flex;
+  }
+
+  .personal-area__link {
+    margin-left: 10px;
+    cursor: pointer;
   }
 
   .personal-area__actions {
@@ -131,16 +160,16 @@
   }
 
   .personal-area__action {
-    margin-left: 10px;
+    margin-right: 10px;
     cursor: pointer;
 
     a {
       transition: color .3s ease-in-out;
-    }
-  }
 
-  .personal-area__action:first-child {
-    margin-left: 0;
+      &:hover {
+        color: rgba(193, 102, 29, 0.5);
+      }
+    }
   }
 
   .personal-area__username {
@@ -150,18 +179,5 @@
   .personal-area__user {
     font-size: 18px;
     color: rgba(193, 102, 29, 0.5);
-  }
-
-  .personal-area__action:hover a,
-  .menu__item:hover a {
-    color: rgba(193, 102, 29, 0.5);
-  }
-
-  .personal-area__text_login {
-    display: none;
-  }
-
-  .personal-area__user-logo {
-    display: none;
   }
 </style>

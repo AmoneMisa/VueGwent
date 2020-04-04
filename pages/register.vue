@@ -1,31 +1,28 @@
 <template>
   <div class="main-center-wrapper">
-    <form-tabs current-tab="login-form"/>
-    <login-form/>
+    <form-tabs current-tab="register-form" />
+    <register-form />
   </div>
 </template>
 
 <script>
 
 import FormTabs from "../components/forms/FormTabs";
-import LoginForm from "../components/forms/LoginForm";
+import RegisterForm from "../components/forms/RegisterForm";
 export default {
   components: {
-    LoginForm,
-    FormTabs
-  },
-  middleware ({ store, redirect }) {
-    if (store.state.user.data) {
-      return redirect('/personal-area/')
-    }
-  },
-  head: {
-    title: 'Вход'
+    FormTabs, RegisterForm
   },
   computed: {
     user: function () {
       return this.$store.state.user.data;
     }
+  },
+  head: {
+    title: 'Регистрация'
+  },
+  validate ({ store }) {
+    return !store.state.user.data
   }
 }
 </script>
