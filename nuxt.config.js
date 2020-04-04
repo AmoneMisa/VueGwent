@@ -39,7 +39,9 @@ module.exports = {
     }
   },
   modules: [
-    '@nuxtjs/axios',
+    ['@nuxtjs/axios', {
+      baseURL: '/'
+    }]
   ],
   serverMiddleware: [
     session({
