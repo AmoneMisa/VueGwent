@@ -11,6 +11,7 @@
           <div class="menu__item"><nuxt-link to="/game-field/">Игра</nuxt-link></div>
           <div class="menu__item"><a href="#">Правила игры</a></div>
           <div class="menu__item"><a href="#">Связь с нами</a></div>
+          <div class="menu__item"><a href="#">Страница</a></div>
         </div>
       </div>
       <div class="header__personal-area">
