@@ -1,5 +1,6 @@
 import express from 'express'
 import axios from 'axios';
+import config from '../config';
 
 const router = express.Router();
 const app = express();
@@ -14,7 +15,7 @@ router.use((req, res, next) => {
 router.use(express.json());
 router.use((req, res, next) => {
   req.apiClient = axios.create({
-    baseURL: 'http://api.gwent.a-baros.ru/',
+    baseURL: config.url.api,
     timeout: 1000
   });
 
@@ -57,6 +58,15 @@ router.put('/user/deck/:code/card/', async (req, res) => {
 router.delete('/user/deck/:code/card/:card_code/', async (req, res) => {
   try {
     let resp = await req.apiClient.delete('/user/deck/' + req.params.code + '/card/' + req.params.card_code + '/');
+    res.json(resp.data);
+  } catch (e) {
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
+router.get('/user/deck/:code/available_card/', async (req, res) => {
+  try {
+    let resp = await req.apiClient.get('/user/deck/' + req.params.code + '/available_card/');
     res.json(resp.data);
   } catch (e) {
     res.status(e.response.status).json(e.response.data);

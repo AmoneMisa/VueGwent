@@ -1,5 +1,5 @@
 <template>
-  <cards-list v-if="cards" :cards="cards" @card-click="cardClick"/>
+  <cards-list v-if="cards" :cards="cards"/>
 </template>
 
 <script>
@@ -29,12 +29,6 @@
         }
 
         return this.$store.state.fraction.cards[this.fraction.code];
-      }
-    },
-    methods: {
-      async cardClick(card) {
-        await this.$axios.$put('/api/user/deck/' + this.fraction.code + '/card/', {'card_code': card.code});
-        await this.$store.dispatch('user/deck/fetchCards', this.fraction.code);
       }
     }
   }

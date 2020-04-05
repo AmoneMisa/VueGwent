@@ -1,13 +1,13 @@
 import session from 'express-session'
-import dbConfig from './db.config';
+import config from './config';
 import mysqlStoreFactory from 'express-mysql-session';
 const mysqlStore = mysqlStoreFactory(session);
 
 let options = {
-  host: dbConfig.host,
-  user: dbConfig.user,
-  password: dbConfig.password,
-  database: dbConfig.database
+  host: config.db.host,
+  user: config.db.user,
+  password: config.db.password,
+  database: config.db.database
 };
 
 let sessionStore = new mysqlStore(options);
@@ -52,16 +52,16 @@ module.exports = {
   },
   modules: [
     ['@nuxtjs/axios', {
-      baseURL: 'http://localhost:3000/',
-      browserBaseURL: '/'
+      baseURL: config.url.server,
+      browserBaseURL: config.url.client
     }]
   ],
   serverMiddleware: [
     session({
       secret: 'super-secret-key',
-      resave: false,
+      resave: true,
       saveUninitialized: true,
-      cookie: { maxAge: 60000 },
+      cookie: { maxAge: 24 * 60 * 60 * 1000 },
       store: sessionStore
     }),
     {path: '/api', handler: '~/api/index.js'}

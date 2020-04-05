@@ -14,7 +14,8 @@
           </div>
           <div class="cards-collection__cards">
             <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
-            <fraction-cards :fraction="currentFraction"/>
+              <deck-available-cards :fraction="currentFraction" v-if="user"/>
+              <fraction-cards :fraction="currentFraction" v-else/>
             </simplebar>
           </div>
         </div>
@@ -51,6 +52,7 @@
 
   import Simplebar from 'simplebar-vue';
   import 'simplebar/dist/simplebar.min.css';
+  import DeckAvailableCards from "../components/deck/DeckAvailableCards";
 
   export default {
     data() {
@@ -58,7 +60,9 @@
         currentFractionIndex: 0
       }
     },
-    components: {DeckCards, FractionSlider, FractionCards, Filters, Simplebar, Stats, LeadersPopup, Leaders},
+    components: {
+      DeckAvailableCards,
+      DeckCards, FractionSlider, FractionCards, Filters, Simplebar, Stats, LeadersPopup, Leaders},
     head: {
       title: 'Колода'
     },

@@ -137,12 +137,6 @@
 <style lang="scss">
   .statistic__item {
     text-align: center;
-  }
-
-  .statistic__title {
-    margin-top: 10px;
-    vertical-align: middle;
-    color: #b0b0ae;
 
     svg {
       width: 30px !important;
@@ -150,6 +144,12 @@
       margin-top: 10px;
       vertical-align: middle;
     }
+  }
+
+  .statistic__title {
+    margin-top: 10px;
+    vertical-align: middle;
+    color: #b0b0ae;
   }
 
   .statistic__count {

@@ -33,7 +33,10 @@
     methods: {
       async cardClick(card) {
         await this.$axios.$delete('/api/user/deck/' + this.fraction.code + '/card/' + card.code + '/');
-        await this.$store.dispatch('user/deck/fetchCards', this.fraction.code);
+        await Promise.all([
+          this.$store.dispatch('user/deck/fetchCards', this.fraction.code),
+          this.$store.dispatch('user/deck/fetchAvailableCards', this.fraction.code)
+        ]);
       }
     }
   }
