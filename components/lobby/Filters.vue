@@ -38,7 +38,6 @@
     width: 200px;
     padding: 5px 10px;
     border-radius: 5px;
-    height: 20px;
     margin-left: 10px;
     background-color: rgba(#262020, 0.5);
     border: 1px solid rgba(#262020, 0.5);

@@ -51,7 +51,7 @@
   import LeadersPopup from "../components/deck/LeadersPopup";
 
   import Simplebar from 'simplebar-vue';
-  import 'simplebar/dist/simplebar.min.css';
+
   import DeckAvailableCards from "../components/deck/DeckAvailableCards";
 
   export default {
@@ -122,22 +122,6 @@
 
   .simple-bar-cards {
     height: 660px;
-  }
-
-  .simplebar-vertical {
-    background-color: #0b0b0b;
-    width: 2px !important;
-    overflow: visible;
-  }
-
-  .simplebar-scrollbar {
-    width: 10px;
-    background-color: #5e4e2d;
-    left: -4px;
-  }
-
-  .simplebar-scrollbar:before {
-    background: #5e4e2d !important;
   }
 
   .main-content-game__game-list {

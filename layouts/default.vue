@@ -19,6 +19,7 @@
   import Header from '~/components/Header';
   import Footer from '~/components/Footer';
 
+
   export default {
     components: {
       'custom-header': Header,
@@ -32,6 +33,8 @@
   @import "~/assets/fontawesome/scss/solid";
   @import "~/assets/fontawesome/scss/light";
   @import "~/assets/fontawesome/scss/brands";
+
+  @import "simplebar/dist/simplebar.min.css";
 
   @font-face {
     font-family: WitcherFont-Light;
@@ -88,5 +91,34 @@
   .main-center-wrapper {
     padding: 150px 0 50px;
   }
+
+  .simplebar-vertical {
+    background-color: black;
+    width: 10px !important;
+    overflow: visible;
+  }
+
+  .simplebar-vertical::before {
+    content: "";
+    position: absolute;
+    background-color: #0b0b0b;
+    width: 2px !important;
+    margin: 0 auto;
+    overflow: visible;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .simplebar-scrollbar {
+    width: 10px;
+    background-color: #5e4e2d;
+  }
+
+  .simplebar-scrollbar:before {
+    background: #5e4e2d !important;
+  }
+
 </style>
 

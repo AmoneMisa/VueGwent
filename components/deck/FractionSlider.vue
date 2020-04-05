@@ -184,16 +184,11 @@
     top: -50px;
     transform: rotate(45deg);
     margin: 0 2px;
-    cursor: pointer;
-    transition: background-color .2s ease-in-out;
 
-    &:hover {
-      background-color: rgba(166, 127, 54, 0.73);
-    }
   }
 
   .fractions__page_current {
-    background-color: rgba(239, 163, 38, 0.73);
+    background-color: #b18b48;
   }
 
   .fractions__description {

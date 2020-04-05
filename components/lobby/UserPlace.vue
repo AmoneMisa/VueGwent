@@ -196,8 +196,8 @@
     align-items: center;
     margin-right: 5px;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6) inset;
+    border: 1px solid #1d1d18;
     transition: box-shadow .2s ease-in-out;
-    border: none;
     &:hover {
       box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6) inset, 0 0 5px 2px rgba(#feaf5c, 0.3);
     }

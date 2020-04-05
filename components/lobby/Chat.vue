@@ -44,7 +44,7 @@
         </simplebar>
       </div>
       <div class="chat__user-message">
-        <textarea name="message" class="chat__user-message-field" maxlength="144"></textarea>
+        <input name="message" class="chat__user-message-field" maxlength="144" autocomplete="off">
       </div>
     </div>
   </div>
@@ -82,6 +82,7 @@
     align-items: center;
     margin-right: 5px;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6) inset;
+    border: 1px solid #1d1d18;
   }
 
   .chat-header__online-stats {
@@ -174,10 +175,9 @@
     color: #c6c6c6;
     background-color: #262020;
     border-radius: 5px;
-    height: 15px;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6) inset;
     cursor: pointer;
-    border: none;
+    border: 1px solid #1d1d18;
     padding: 10px 20px;
     width: 100%;
     resize: none;
