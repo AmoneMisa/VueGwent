@@ -1,4 +1,16 @@
 import session from 'express-session'
+import dbConfig from './db.config';
+import mysqlStoreFactory from 'express-mysql-session';
+const mysqlStore = mysqlStoreFactory(session);
+
+let options = {
+  host: dbConfig.host,
+  user: dbConfig.user,
+  password: dbConfig.password,
+  database: dbConfig.database
+};
+
+let sessionStore = new mysqlStore(options);
 
 module.exports = {
   /*
@@ -49,7 +61,8 @@ module.exports = {
       secret: 'super-secret-key',
       resave: false,
       saveUninitialized: true,
-      cookie: { maxAge: 60000 }
+      cookie: { maxAge: 60000 },
+      store: sessionStore
     }),
     {path: '/api', handler: '~/api/index.js'}
   ],

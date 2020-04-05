@@ -36,9 +36,45 @@ router.get('/user/', async (req, res) => {
   }
 });
 
+router.get('/user/deck/:code/card/', async (req, res) => {
+  try {
+    let resp = await req.apiClient.get('/user/deck/' + req.params.code + '/card/');
+    res.json(resp.data);
+  } catch (e) {
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
+router.put('/user/deck/:code/card/', async (req, res) => {
+  try {
+    let resp = await req.apiClient.put('/user/deck/' + req.params.code + '/card/', req.body);
+    res.json(resp.data);
+  } catch (e) {
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
+router.delete('/user/deck/:code/card/:card_code/', async (req, res) => {
+  try {
+    let resp = await req.apiClient.delete('/user/deck/' + req.params.code + '/card/' + req.params.card_code + '/');
+    res.json(resp.data);
+  } catch (e) {
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
 router.get('/fraction/', async (req, res) => {
   try {
     let resp = await req.apiClient.get('/fraction/');
+    res.json(resp.data);
+  } catch (e) {
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
+router.get('/fraction/:code/card/', async (req, res) => {
+  try {
+    let resp = await req.apiClient.get('/fraction/' + req.params.code + '/card/');
     res.json(resp.data);
   } catch (e) {
     res.status(e.response.status).json(e.response.data);

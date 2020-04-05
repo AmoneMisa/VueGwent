@@ -27,9 +27,8 @@
       <div class="fractions__button-text">{{ nextFraction.name }}</div>
     </div>
     <div class="fractions__pages">
-      <div class="fractions__page"></div>
-      <div class="fractions__page"></div>
-      <div class="fractions__page"></div>
+      <div :class="{'fractions__page': true, 'fractions__page_current': i === currentFractionIndex + 1}" v-for="i in fractions.length" :key="i">
+      </div>
     </div>
     <div class="fractions__description">{{ currentFraction.description }}</div>
   </div>
@@ -39,11 +38,7 @@
   import $ from '~/plugins/jquery';
 
   export default {
-    data() {
-      return {
-        currentFractionIndex: 0
-      }
-    },
+    props: ['currentFractionIndex', 'setCurrentFractionIndex'],
     mounted() {
       let $fractions = $(this.$el);
       let $cards = $fractions.find('.fractions-deck');
@@ -55,22 +50,8 @@
         animation: 0,
         transitions: true
       }).on('jcarousel:targetin', '.fractions-deck', function (event, carousel) {
-        then.currentFractionIndex = $cards.index($(this));
+        then.setCurrentFractionIndex($cards.index($(this)));
       });
-
-
-      $fractions.find('.fractions__pages')
-        .on('jcarouselpagination:active', '.fractions__page', function () {
-          $(this).addClass('fractions__page_current');
-        })
-        .on('jcarouselpagination:inactive', '.fractions__page', function () {
-          $(this).removeClass('fractions__page_current');
-        })
-        .jcarouselPagination({
-          item: function (page) {
-            return "<div class=\"fractions__page\"></div>"
-          }
-        });
 
       $fractions.find('.fractions__button_left').jcarouselControl({
         target: '-=1'

@@ -38,6 +38,10 @@
     src: url("/witcher-fonts/1_PF Din Text Cond Pro.ttf");
   }
 
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   body {
     font-family: "WitcherFont-Light", sans-serif;
     font-size: 18px;

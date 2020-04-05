@@ -23,9 +23,11 @@
   import UserPlace from "~/components/lobby/UserPlace";
   import GameList from "~/components/lobby/GameList";
   import CurrentGameList from "~/components/lobby/CurrentGameList";
+  import Simplebar from 'simplebar-vue';
+  import 'simplebar/dist/simplebar.min.css';
 
   export default {
-    components: {Chat, UserPlace, GameList, CurrentGameList},
+    components: {Chat, UserPlace, GameList, CurrentGameList, Simplebar},
     head: {
       title: 'Лобби игры Гвинт'
     }

@@ -17,6 +17,7 @@
     </div>
     <div class="chat">
       <div class="chat__messages" data-simplebar="init">
+        <simplebar data-simplebar-auto-hide="false" class="simple-bar-chat">
         <div class="messages">
           <div class="message">
             <div class="message__time">[10:40:09]</div>
@@ -40,6 +41,7 @@
             <div class="message__text">Фольтест топ.</div>
           </div>
         </div>
+        </simplebar>
       </div>
       <div class="chat__user-message">
         <textarea name="message" class="chat__user-message-field" maxlength="144"></textarea>
@@ -49,7 +51,13 @@
 </template>
 
 <script>
-  export default {}
+  import Simplebar from 'simplebar-vue';
+  import 'simplebar/dist/simplebar.min.css';
+
+  export default {
+    components :
+    Simplebar
+  }
 </script>
 
 <style lang="scss">
@@ -177,5 +185,9 @@
     line-height: 1.2;
     display: flex;
     align-items: center;
+  }
+
+  .simple-bar-chat {
+    height: 300px;
   }
 </style>

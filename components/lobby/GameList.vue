@@ -1,7 +1,8 @@
 <template>
   <div class="game-list">
     <filters/>
-    <div class="game-list__items-games" data-simplebar="init">
+    <div class="game-list__items-games">
+      <simplebar data-simplebar-auto-hide="false" class="simple-bar-custom">
       <div class="items-games">
         <div class="items-games__item">
           <div class="items-games__game-name">Иванушка Иванов</div>
@@ -24,15 +25,18 @@
           </div>
         </div>
       </div>
+      </simplebar>
     </div>
   </div>
 </template>
 
 <script>
   import Filters from "./Filters";
+  import Simplebar from 'simplebar-vue';
+  import 'simplebar/dist/simplebar.min.css';
 
   export default {
-    components: {Filters}
+    components: {Filters, Simplebar}
   }
 </script>
 
@@ -149,4 +153,7 @@
     }
   }
 
+  .simple-bar-custom {
+    height: 470px;
+  }
 </style>
