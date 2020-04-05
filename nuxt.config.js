@@ -40,7 +40,8 @@ module.exports = {
   },
   modules: [
     ['@nuxtjs/axios', {
-      baseURL: '/'
+      baseURL: 'http://localhost:3000/',
+      browserBaseURL: '/'
     }]
   ],
   serverMiddleware: [
