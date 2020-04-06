@@ -30,6 +30,8 @@
 </script>
 
 <style lang="scss">
+  @import "~/assets/_variables";
+
   .items-games {
     display: flex;
     flex-direction: column;
@@ -85,7 +87,7 @@
   .items-games__user-photo-img {
     width: 60px;
     height: 60px;
-    cursor: pointer;
+    cursor: $cursorPointer;
 
   }
 
@@ -128,7 +130,7 @@
     color: #a5a195;
     border: 1px solid #191917;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: $cursorPointer;
     padding: 0 10px;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset;
     transition: box-shadow .2s ease-in-out;

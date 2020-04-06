@@ -28,6 +28,8 @@
 </script>
 
 <style lang="scss">
+  @import "~/assets/_variables";
+
   .form-tabs {
     display: flex;
     justify-content: center;
@@ -38,7 +40,7 @@
     margin: 0 30px;
     color: #bc8e46;
     font-size: 20px;
-    cursor: pointer;
+    cursor: $cursorPointer;
     border-bottom: 1px solid transparent;
     padding-bottom: 10px;
   }

@@ -20,6 +20,8 @@
 </script>
 
 <style lang="scss">
+  @import "~/assets/_variables";
+
   .cards-list {
     display: flex;
     flex-flow: row wrap;
@@ -38,7 +40,7 @@
     margin-left: 20px;
     height: 300px;
     width: 150px;
-    cursor: pointer;
+    cursor: $cursorPointer;
     transition: box-shadow .2s ease-in-out;
     border-radius: 10px;
 

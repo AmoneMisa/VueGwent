@@ -1,0 +1,41 @@
+$cursorPointerEI : url(/cursors/TheWitcher3Link.ani), pointer;
+$cursorPointer :  url(/cursors/TheWitcher3Link.gif), pointer;
+
+////////////////////////////Text colors//////////////////////////
+
+$defaultText : #716556;
+$defaultTextMoreIntensive : #b18b48;
+$greenText : #406139;
+$title : #c6c6c6;
+$subTitle : #b0b0ae;
+$additionalText : #4f3832;
+
+////////////////Icons/////////////////////
+$greenIcon : #3e9c47;
+$filterIcon : #4f3832;
+$filterIconChosen : #fefbfb;
+$pagesChosen : #91824a;
+$pages : #242323;
+
+////////////borders////////////////
+
+$borderDeck : #0c0c0c;
+$customBorder : linear-gradient(
+    to bottom, rgba(47, 37, 23, 0.1),
+    #574c27,
+    rgba(47, 37, 23, 0.1))
+1 100%;
+
+
+/////////////////Shadow//////////////
+
+$shadowHover : #feaf5c;
+
+////////////////////Buttons///////////////////
+
+$scale : #655940;
+$button : #1d1d18;
+$buttonText : #a5a195;
+$buttonDark : #262020;
+$buttonDarkText : #98937f;
+$buttonTextHover : #c6c6c6;

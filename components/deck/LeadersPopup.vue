@@ -31,6 +31,8 @@
 </script>
 
 <style lang="scss">
+  @import "~/assets/_variables";
+
   .leader__popup-container {
     position: absolute;
     z-index: 1;
@@ -120,7 +122,7 @@
     position: absolute;
     right: 20px;
     top: -120px;
-    cursor: pointer;
+    cursor: $cursorPointer;
   }
   .button__text {
     color: #a19e8e;

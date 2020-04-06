@@ -17,6 +17,7 @@
 </script>
 
 <style lang="scss">
+  @import "~/assets/_variables";
 
   .photo {
     display: flex;
@@ -56,7 +57,7 @@
     background-color: #1d1d18;
     line-height: 30px;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: $cursorPointer;
     transition: box-shadow .2s ease-in-out, color .2s ease-in-out;
     border: 1px solid #1d1d18;
     color: #a5a195;

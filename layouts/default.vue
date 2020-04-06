@@ -34,6 +34,8 @@
   @import "~/assets/fontawesome/scss/light";
   @import "~/assets/fontawesome/scss/brands";
 
+  @import "~/assets/_variables";
+
   @import "simplebar/dist/simplebar.min.css";
 
   @font-face {
@@ -53,15 +55,21 @@
     padding: 0;
     background: #000000;
     color: #ffffff;
+    cursor: url(/cursors/TheWitcher3MousePointer.cur), default;
+  }
+
+  button, input, textarea {
+    outline: none;
   }
 
   button, input {
-    outline: none;
+    cursor: $cursorPointer;
   }
 
   a {
     color: white;
     text-decoration: none;
+    cursor: $cursorPointer;
   }
 
   .wrapper {

@@ -79,6 +79,8 @@
 </script>
 
 <style lang="scss">
+  @import "~/assets/_variables";
+
   .fractions {
     overflow: hidden;
     width: 900px;
@@ -98,7 +100,7 @@
     position: absolute;
     top: 10px;
     display: flex;
-    cursor: pointer;
+    cursor: $cursorPointer;
     align-items: center;
     height: 30px;
 

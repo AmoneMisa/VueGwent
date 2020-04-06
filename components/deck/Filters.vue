@@ -84,6 +84,8 @@
 </script>
 
 <style lang="scss">
+  @import "~/assets/_variables";
+
   .filters {
     display: flex;
     justify-content: space-between;
@@ -93,7 +95,7 @@
   .filter {
     width: 40px;
     height: 40px;
-    cursor: pointer;
+    cursor: $cursorPointer;
     path {
       fill : #4e3d36!important;
     }

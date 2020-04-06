@@ -16,6 +16,7 @@
 </script>
 
 <style lang="scss">
+  @import "~/assets/_variables";
 
   .leader__title {
     color: #b18b48;
@@ -36,6 +37,6 @@
   .leader__img {
     width: 117px;
     height: 220px;
-    cursor: pointer;
+    cursor: $cursorPointer;
   }
 </style>
