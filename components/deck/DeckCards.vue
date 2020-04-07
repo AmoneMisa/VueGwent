@@ -1,19 +1,13 @@
 <template>
-  <cards-list v-if="cards" :cards="cards"  @card-click="cardClick"/>
+  <cards-list v-if="cards" :cards="cards" @card-click="cardClick"/>
 </template>
 
 <script>
   import CardsList from "./CardsList";
+
   export default {
     components: {CardsList},
     props: ['fraction'],
-    async updated() {
-      if (this.cards) {
-        return;
-      }
-
-      await this.$store.dispatch('user/deck/fetchCards', this.fraction.code);
-    },
     async serverPrefetch() {
       if (!this.fraction) {
         return;
@@ -32,11 +26,13 @@
     },
     methods: {
       async cardClick(card) {
-        await this.$axios.$delete('/api/user/deck/' + this.fraction.code + '/card/' + card.code + '/');
-        await Promise.all([
-          this.$store.dispatch('user/deck/fetchCards', this.fraction.code),
-          this.$store.dispatch('user/deck/fetchAvailableCards', this.fraction.code)
-        ]);
+        await this.$store.dispatch('user/deck/removeCard', {fractionCode: this.fraction.code, card});
+        await this.$store.dispatch('user/deck/fetchInfo', this.fraction.code);
+      }
+    },
+    watch: {
+      async fraction(fraction) {
+        await this.$store.dispatch('user/deck/fetchCards', fraction.code);
       }
     }
   }

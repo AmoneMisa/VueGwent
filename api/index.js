@@ -37,6 +37,15 @@ router.get('/user/', async (req, res) => {
   }
 });
 
+router.get('/user/deck/:code/', async (req, res) => {
+  try {
+    let resp = await req.apiClient.get('/user/deck/' + req.params.code + '/');
+    res.json(resp.data);
+  } catch (e) {
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
 router.get('/user/deck/:code/card/', async (req, res) => {
   try {
     let resp = await req.apiClient.get('/user/deck/' + req.params.code + '/card/');

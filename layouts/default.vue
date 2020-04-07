@@ -63,13 +63,11 @@
   }
 
   button, input {
-    cursor: $cursorPointer;
   }
 
   a {
     color: white;
     text-decoration: none;
-    cursor: $cursorPointer;
   }
 
   .wrapper {

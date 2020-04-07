@@ -40,7 +40,6 @@
     margin: 0 30px;
     color: #bc8e46;
     font-size: 20px;
-    cursor: $cursorPointer;
     border-bottom: 1px solid transparent;
     padding-bottom: 10px;
   }

@@ -40,7 +40,6 @@
     margin-left: 20px;
     height: 300px;
     width: 150px;
-    cursor: $cursorPointer;
     transition: box-shadow .2s ease-in-out;
     border-radius: 10px;
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="info__statistic">
+  <div class="deck-stats__statistic" v-if="info" >
     <div class="statistic">
       <div class="statistic__item statistic__all-cards">
         <div class="statistic__title">Карты в колоде</div>
@@ -20,7 +20,7 @@
               fill="#38ab46" fill-rule="evenodd" stroke="none"/>
           </g>
         </svg>
-        <span class="all-cards__count statistic__count">26</span>
+        <span class="all-cards__count statistic__count">{{ info.count_cards }}</span>
       </div>
       <div class="statistic__item statistic__fight-cards">
         <div class="statistic__title">Карты отрядов</div>
@@ -34,7 +34,7 @@
               fill="#b68e46" fill-rule="evenodd" stroke="none"/>
           </g>
         </svg>
-        <span class="fight-cards__count statistic__count">24</span>
+        <span class="fight-cards__count statistic__count">{{ info.count_creature_cards }}</span>
       </div>
       <div class="statistic__item statistic__special-cards">
         <div class="statistic__title">Специальные карты</div>
@@ -70,7 +70,7 @@
                   fill-rule="evenodd" stroke="none"/>
           </g>
         </svg>
-        <span class="special-cards__count statistic__count">2</span>
+        <span class="special-cards__count statistic__count">{{ info.count_special_cards }}</span>
       </div>
       <div class="statistic__item statistic__power">
         <div class="statistic__title">Общая сила карт отрядов</div>
@@ -93,7 +93,7 @@
               fill="#b68e46" fill-rule="evenodd" stroke="none"/>
           </g>
         </svg>
-        <span class="power__count statistic__count">165</span>
+        <span class="power__count statistic__count">{{ info.total_power }}</span>
       </div>
       <div class="statistic__item statistic__heroes">
         <div class="statistic__title">Герои</div>
@@ -124,14 +124,16 @@
               fill="#b68e46" fill-rule="evenodd" stroke="none"/>
           </g>
         </svg>
-        <span class="heroes__count statistic__count">9</span>
+        <span class="heroes__count statistic__count">{{ info.count_hero_cards }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  export default {}
+  export default {
+    props: ['info'],
+  }
 </script>
 
 <style lang="scss">

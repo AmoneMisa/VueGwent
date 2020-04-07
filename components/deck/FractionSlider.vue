@@ -100,7 +100,6 @@
     position: absolute;
     top: 10px;
     display: flex;
-    cursor: $cursorPointer;
     align-items: center;
     height: 30px;
 

@@ -43,7 +43,6 @@
     color: #b18b48;
     margin-bottom: 10px;
     flex: none;
-    cursor: $cursorPointer;
     padding-right: 5px;
     border-bottom: 1px solid transparent;
 

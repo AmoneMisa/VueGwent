@@ -8,13 +8,6 @@
   export default {
     components: {CardsList},
     props: ['fraction'],
-    async updated() {
-      if (this.cards) {
-        return;
-      }
-
-      await this.$store.dispatch('user/deck/fetchAvailableCards', this.fraction.code);
-    },
     async serverPrefetch() {
       if (!this.fraction) {
         return;
@@ -33,11 +26,13 @@
     },
     methods: {
       async cardClick(card) {
-        await this.$axios.$put('/api/user/deck/' + this.fraction.code + '/card/', {'card_code': card.code});
-        await Promise.all([
-          this.$store.dispatch('user/deck/fetchAvailableCards', this.fraction.code),
-          this.$store.dispatch('user/deck/fetchCards', this.fraction.code)
-        ]);
+        await this.$store.dispatch('user/deck/addCard', {fractionCode: this.fraction.code, card});
+        await this.$store.dispatch('user/deck/fetchInfo', this.fraction.code);
+      }
+    },
+    watch: {
+      async fraction(fraction) {
+        await this.$store.dispatch('user/deck/fetchAvailableCards', fraction.code);
       }
     }
   }

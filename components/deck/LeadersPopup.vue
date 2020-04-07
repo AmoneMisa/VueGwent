@@ -122,7 +122,6 @@
     position: absolute;
     right: 20px;
     top: -120px;
-    cursor: $cursorPointer;
   }
   .button__text {
     color: #a19e8e;

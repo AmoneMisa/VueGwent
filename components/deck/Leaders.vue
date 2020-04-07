@@ -1,18 +1,24 @@
 <template>
-      <div class="info__leader">
-        <div class="leader">
-          <div class="leader__title">Лидер</div>
-          <div class="leader__card">
-            <img src="/imgs/Нильфгаард.png" class="leader__img leader__img_chosen">
-          </div>
-        </div>
+  <div class="deck-stats__leader">
+    <div class="leader">
+      <div class="leader__title">Лидер</div>
+      <div class="leader__card">
+        <img src="/imgs/Нильфгаард.png" class="leader__img leader__img_chosen">
       </div>
+    </div>
+    <LeadersPopup />
+  </div>
 </template>
 
 <script>
-    export default {
+  import LeadersPopup from "./LeadersPopup";
 
-    }
+  export default {
+    props: ['info'],
+
+    components: { LeadersPopup }
+  }
+
 </script>
 
 <style lang="scss">
@@ -37,6 +43,5 @@
   .leader__img {
     width: 117px;
     height: 220px;
-    cursor: $cursorPointer;
   }
 </style>
