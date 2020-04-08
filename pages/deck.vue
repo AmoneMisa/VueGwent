@@ -31,23 +31,26 @@
       </div>
       <div class="deck-page__deck-cards">
         <div class="cards-collection">
-          <div class="cards-collection__title cards-collection__title-right">Карты колоды</div>
-          <div class="cards-collection__current-filter cards-collection__current-filter-right">{{
+          <div class="cards-collection__title cards-collection__title-right" v-if="user">Карты колоды</div>
+          <div class="cards-collection__current-filter cards-collection__current-filter-right" v-if="user">{{
             filtersTitles[currentCardsFilter] || 'Все карты' }}
           </div>
           <div class="cards-collection__filters">
             <filters :current-filter="currentCardsFilter"
-                     @set-current-filter="(filter) => this.currentCardsFilter = filter"/>
+                     @set-current-filter="(filter) => this.currentCardsFilter = filter"
+            v-if="user" />
           </div>
           <div class="cards-collection__cards">
             <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
               <deck-cards :fraction="currentFraction" v-if="user"/>
+              <div class="cards-collection__alt-title" v-else>
+                <nuxt-link to="/">Войдите</nuxt-link>, чтобы собрать колоду</div>
             </simplebar>
           </div>
         </div>
       </div>
     </div>
-    <action-buttons/>
+    <action-buttons v-if="user" />
   </div>
 </template>
 <script>
@@ -158,8 +161,23 @@
     padding-right: 15px;
   }
 
+  .cards-collection__alt-title {
+    display: flex;
+    font-size: 28px;
+    color: $defaultTextMoreIntensive;
+    align-items: center;
+    justify-content: center;
+    height: 660px;
+    border: 1px solid $borderDeck;
+    border-radius: 5px;
+    a {
+      color: $title;
+    }
+  }
+
   .simple-bar-cards {
     height: 660px;
+    position: relative;
   }
 
   .main-content-game__game-list {

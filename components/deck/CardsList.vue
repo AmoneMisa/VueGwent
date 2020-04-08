@@ -26,11 +26,10 @@
     display: flex;
     flex-flow: row wrap;
     padding-right: 30px;
-    position: relative;
   }
 
   .cards-list__item {
-    width: calc((100% - 30px) / 3);
+    width: calc((100% - 20px) / 3);
     padding-top: 20px;
     padding-right: 20px;
     flex: none;
