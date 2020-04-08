@@ -2,21 +2,22 @@
   <div class="deck-stats__leader">
     <div class="leader">
       <div class="leader__title">Лидер</div>
-      <div class="leader__card">
+      <div class="leader__card" @click="openLeadersPopup">
         <img src="/imgs/Нильфгаард.png" class="leader__img leader__img_chosen">
       </div>
     </div>
-    <LeadersPopup />
   </div>
 </template>
 
 <script>
-  import LeadersPopup from "./LeadersPopup";
 
   export default {
     props: ['info'],
-
-    components: { LeadersPopup }
+    methods: {
+      openLeadersPopup() {
+        this.$store.dispatch('deck_page/openLeadersPopup')
+      }
+    }
   }
 
 </script>

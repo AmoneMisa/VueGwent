@@ -8,9 +8,12 @@
       <div class="deck-page__fraction-cards">
         <div class="cards-collection">
           <div class="cards-collection__title">Коллекция карт</div>
-          <div class="cards-collection__current-filter">current-filter</div>
+          <div class="cards-collection__current-filter">{{ filtersTitles[currentAvailableCardsFilter] || 'Все карты'
+            }}
+          </div>
           <div class="cards-collection__filters">
-            <filters />
+            <filters :current-filter="currentAvailableCardsFilter"
+                     @set-current-filter="(filter) => this.currentAvailableCardsFilter = filter"/>
           </div>
           <div class="cards-collection__cards">
             <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
@@ -21,14 +24,20 @@
         </div>
       </div>
       <div class="deck-page__deck-stats">
-        <info :fraction="currentFraction" v-if="user"/>
+        <info
+          :fraction="currentFraction"
+          v-if="user"
+        />
       </div>
       <div class="deck-page__deck-cards">
         <div class="cards-collection">
           <div class="cards-collection__title cards-collection__title-right">Карты колоды</div>
-          <div class="cards-collection__current-filter cards-collection__current-filter-right">current-filter</div>
+          <div class="cards-collection__current-filter cards-collection__current-filter-right">{{
+            filtersTitles[currentCardsFilter] || 'Все карты' }}
+          </div>
           <div class="cards-collection__filters">
-            <filters />
+            <filters :current-filter="currentCardsFilter"
+                     @set-current-filter="(filter) => this.currentCardsFilter = filter"/>
           </div>
           <div class="cards-collection__cards">
             <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
@@ -38,6 +47,7 @@
         </div>
       </div>
     </div>
+    <action-buttons/>
   </div>
 </template>
 <script>
@@ -47,6 +57,8 @@
   import Filters from "~/components/deck/Filters";
   import Info from "~/components/deck/Info";
   import DeckAvailableCards from "~/components/deck/DeckAvailableCards";
+  import ActionButtons from "~/components/deck/ActionButtons";
+  import LeadersPopup from "~/components/deck/LeadersPopup";
 
   import Simplebar from 'simplebar-vue';
 
@@ -54,12 +66,38 @@
   export default {
     data() {
       return {
-        currentFractionIndex: 0
+        currentFractionIndex: 0,
+        currentAvailableCardsFilter: null,
+        currentCardsFilter: null,
+        filtersTitles: {
+          'filter-all': 'Все карты',
+          'filter-warrior': 'Рукопашные отряды',
+          'filter-archer': 'Дальнобойные отряды',
+          'filter-siege': 'Осадные отряды',
+          'filter-hero': 'Герои',
+          'filter-weather': 'Погодные карты',
+          'filter-action': 'Специальные карты'
+        }
       }
+    },
+    mounted() {
+      let that = this;
+      document.addEventListener('keyup', function (key) {
+        if (key.code === 'Escape') {
+          that.$store.dispatch('deck_page/closeLeadersPopup');
+        }
+      });
+      document.addEventListener('keyup', function (key) {
+        if (key.code === 'KeyX' || key.code === 'Keyx' || key.code === 'Keyч' || key.code === 'KeyЧ') {
+          that.$store.dispatch('deck_page/openLeadersPopup');
+        }
+      })
     },
     components: {
       DeckAvailableCards,
-      DeckCards, FractionSlider, FractionCards, Filters, Simplebar, Info
+      DeckCards, FractionSlider, FractionCards,
+      Filters, Simplebar, Info, ActionButtons,
+      LeadersPopup
     },
     head: {
       title: 'Колода'
@@ -73,7 +111,7 @@
       },
       user: function () {
         return this.$store.state.user.data;
-      }
+      },
     }
   };
 </script>

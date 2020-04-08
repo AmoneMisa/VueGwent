@@ -26,6 +26,7 @@
     display: flex;
     flex-flow: row wrap;
     padding-right: 30px;
+    position: relative;
   }
 
   .cards-list__item {
@@ -44,14 +45,11 @@
     border-radius: 10px;
 
     &:hover {
-      box-shadow: 0 0 10px 2px rgba(#feaf5c, 0.56);
-
+      box-shadow: 0 0 10px 3px rgba(#feaf5c, 0.56);
     }
   }
 
   .cards-list__item-img {
-    /*max-width: 100%;*/
-    /*max-height: 100%;*/
     height: 300px;
     width: 150px;
   }

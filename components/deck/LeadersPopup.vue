@@ -16,7 +16,7 @@
           <div class="popup-container__skill">Фольтест топ. ТОП!</div>
         </div>
       </div>
-      <button class="popup-container__button">
+      <button class="popup-container__button" @click="closeLeadersPopup">
         <span class="button__text">[Esc]</span>Закрыть
         <i class="fal fa-window-close button__close"></i>
       </button>
@@ -27,6 +27,11 @@
 
 <script>
     export default {
+      methods: {
+        closeLeadersPopup() {
+          this.$store.dispatch('deck_page/closeLeadersPopup')
+        }
+      }
     }
 </script>
 
@@ -40,8 +45,7 @@
     height: 660px;
     background-color: rgba(0, 0, 0, 0.23);
     border: none;
-    display: none;
-
+  }
     .popup-container__wrapper {
       width: 1200px;
       margin: 0 auto;
@@ -97,7 +101,7 @@
       width: 117px;
       height: 220px;
     }
-  }
+
   .popup-container__description {
     background-color: rgba(0, 0, 0, 0.7);
     color: #bc8e46;
@@ -109,7 +113,6 @@
   }
   .popup-container__button {
     display: block;
-    height: 42px;
     width: 140px;
     text-align: center;
     line-height: 40px;
@@ -136,15 +139,6 @@
     height: 20px;
     color: #1c1616;
     margin-left: 5px;
-  }
-
-
-  .leader__img_open-popup {
-    display: flex;
-    justify-content: center;
-    .img__popup-container {
-      display: block;
-    }
   }
 
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="fraction-cards__filters filters">
     <div class="filter" :class="{'filter_current' : false, 'filter_current' : currentFilter === 'filter-all'}"
-         @click="() => this.currentFlilter = 'filter-all'">
+         @click="() => this.$emit('set-current-filter', 'filter-all')" >
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33pt" height="39pt"
            viewBox="0 0 33 39" version="1.1">
         <g>
@@ -17,7 +17,7 @@
       </svg>
     </div>
     <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-warrior'}"
-         @click="() => this.currentFlilter = 'filter-warrior'">
+         @click="() => this.$emit('set-current-filter', 'filter-warrior')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
            style="height: 512px; width: 512px;">
         <path d="M0 0h512v512H0z" fill="#ff0000" fill-opacity="0"></path>
@@ -29,7 +29,7 @@
       </svg>
     </div>
     <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-archer'}"
-         @click="() => this.currentFlilter = 'filter-archer'">
+         @click="() => this.$emit('set-current-filter','filter-archer')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
            style="height: 512px; width: 512px;">
         <path d="M0 0h512v512H0z" fill="#ff0000" fill-opacity="0"></path>
@@ -41,7 +41,7 @@
       </svg>
     </div>
     <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-siege'}"
-         @click="() => this.currentFlilter = 'filter-siege'">
+         @click="() => this.$emit('set-current-filter', 'filter-siege')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
            style="height: 512px; width: 512px;">
         <path d="M0 0h512v512H0z" fill="#ff0000" fill-opacity="0"></path>
@@ -53,7 +53,7 @@
       </svg>
     </div>
     <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-hero'}"
-         @click="() => this.currentFlilter = 'filter-hero'">
+         @click="() => this.$emit('set-current-filter', 'filter-hero')">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40pt" height="40pt"
            viewBox="0 0 40 40" version="1.1">
         <g>
@@ -77,7 +77,7 @@
       </svg>
     </div>
     <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-weather'}"
-         @click="() => this.currentFlilter = 'filter-weather'">
+         @click="() => this.$emit('set-current-filter', 'filter-weather')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
            style="height: 512px; width: 512px;">
         <path d="M0 0h512v512H0z" fill="#ff0000" fill-opacity="0"></path>
@@ -89,7 +89,7 @@
       </svg>
     </div>
     <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-action'}"
-         @click="() => this.currentFlilter = 'filter-filter-action'">
+         @click="() => this.$emit('set-current-filter', 'filter-action')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
            style="height: 512px; width: 512px;">
         <path d="M0 0h512v512H0z" fill="#ff0000" fill-opacity="0"></path>
@@ -105,11 +105,7 @@
 
 <script>
   export default {
-    data() {
-      return {
-        currentFilter: null
-      }
-    }
+    props: ['currentFilter']
   }
 </script>
 

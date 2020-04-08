@@ -1,18 +1,19 @@
 <template>
   <div class="deck-stats">
     <leaders/>
-    <stats :info="info" />
+    <leaders-popup v-if="isOpenLeadersPopup"/>
+    <stats :info="info"/>
   </div>
 </template>
 
 <script>
   import Leaders from "./Leaders";
   import Stats from "./Stats";
+  import LeadersPopup from "./LeadersPopup";
 
   export default {
-    components: {Leaders, Stats},
+    components: {Leaders, Stats, LeadersPopup},
     props: ['fraction'],
-
     async serverPrefetch() {
       if (!this.fraction) {
         return;
@@ -27,6 +28,9 @@
         }
 
         return this.$store.state.user.deck.info[this.fraction.code];
+      },
+      isOpenLeadersPopup() {
+        return this.$store.state.deck_page.isOpenLeadersPopup;
       }
     },
     watch: {
@@ -44,5 +48,6 @@
     align-items: center;
     flex-direction: column;
     margin-top: 40px;
+    position: relative;
   }
 </style>
