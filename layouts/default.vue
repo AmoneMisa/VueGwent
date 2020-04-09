@@ -126,5 +126,23 @@
     background: #5e4e2d !important;
   }
 
+  @media (max-width: 750px) {
+    .wrapper {
+      width: 340px;
+    }
+  }
+
+  @media (min-width: 751px) and (max-width: 970px) {
+    .wrapper {
+      width: 730px;
+    }
+  }
+
+  @media (min-width: 971px) and (max-width: 1199px) {
+    .wrapper {
+      width: 950px;
+    }
+  }
+
 </style>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="game-list">
-    <filters/>
+    <filters />
     <div class="game-list__items-games">
       <simplebar data-simplebar-auto-hide="false" class="simple-bar-custom">
         <items-games button-text="Играть" />
@@ -15,13 +15,12 @@
   import ItemsGames from "./ItemsGames";
 
   export default {
+    props: ['currentGameList'],
     components: {Filters, Simplebar, ItemsGames}
   }
 </script>
 
 <style lang="scss">
-
-
   .simple-bar-custom {
     height: 470px;
   }

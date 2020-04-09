@@ -44,7 +44,7 @@
             <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
               <deck-cards :fraction="currentFraction" v-if="user"/>
               <div class="cards-collection__alt-title" v-else>
-                <nuxt-link to="/">Войдите</nuxt-link>, чтобы собрать колоду</div>
+                <nuxt-link class="cards-collection__alt-title-link" to="/">Войдите</nuxt-link>, чтобы собрать колоду</div>
             </simplebar>
           </div>
         </div>
@@ -132,7 +132,6 @@
 
   .deck-page__fraction-cards,
   .deck-page__deck-cards {
-    /*height: 660px;*/
     flex: 1;
     overflow: hidden;
     padding-left: 15px;
@@ -170,10 +169,16 @@
     height: 660px;
     border: 1px solid $borderDeck;
     border-radius: 5px;
-    a {
-      color: $title;
-    }
   }
+
+    .cards-collection__alt-title-link {
+      color: $subTitle;
+      transition: color .2s ease-in-out;
+      &:hover {
+        color: $title;
+      }
+    }
+
 
   .simple-bar-cards {
     height: 660px;

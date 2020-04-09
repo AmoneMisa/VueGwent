@@ -1,15 +1,20 @@
 <template>
   <div class="lobby">
     <div class="lobby__wrapper">
-      <user-place/>
+      <user-place />
       <div class="lobby__main-content-game">
         <div class="main-content-game">
           <div class="main-content-game__titles">
-            <div class="main-content-game__title main-content-game__title_current games">Список игр</div>
-            <div class="main-content-game__title current-games">Текущие игры</div>
+            <div class="main-content-game__title"
+                 @click="() => currentGameList = 'games'"
+                 :class="{'main-content-game__title_current' : currentGameList === 'games'}">Список игр</div>
+            <div class="main-content-game__title"
+                 @click="() => currentGameList = 'current-games'"
+                 :class="{'main-content-game__title_current' : currentGameList === 'current-games'}">Текущие игры</div>
           </div>
           <div class="main-content-game__current-game-list main-content-game__game-list">
-            <game-list/>
+            <game-list v-if="currentGameList === 'games'" />
+            <current-game-list  v-if="currentGameList === 'current-games'" />
           </div>
         </div>
       </div>
@@ -28,6 +33,11 @@
     components: {Chat, UserPlace, GameList, CurrentGameList},
     head: {
       title: 'Лобби игры Гвинт'
+    },
+    data () {
+      return {
+        currentGameList : 'games'
+      }
     }
   }
 </script>

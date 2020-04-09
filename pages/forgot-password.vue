@@ -6,9 +6,9 @@
 </template>
 
 <script>
-
 import FormTabs from "../components/forms/FormTabs";
 import ForgotPasswordForm from "../components/forms/ForgotPasswordForm";
+
 export default {
   components: {
     FormTabs, ForgotPasswordForm
