@@ -2,20 +2,20 @@
   <div class="form-wrapper">
     <form class="form register-form" @submit.prevent="submit">
       <div class="form__item">
-        <input class="form__field registration-login" placeholder="Введите Логин" v-model="login">
+        <input-placeholder placeholder="Введите Логин" v-model="login"/>
       </div>
       <div class="form__item">
-        <input class="form__field registration-name" placeholder="Введите Имя" v-model="name">
+        <input-placeholder placeholder="Введите Имя" v-model="name"/>
       </div>
       <div class="form__item" v-show="false">
-        <input type="email" class="form__field registration-email" placeholder="Введите Email">
+        <input-placeholder type="email" placeholder="Введите Email"/>
       </div>
       <div class="form__item">
-        <input type="password" class="form__field registration-password" placeholder="Введите пароль" v-model="password">
+        <input-placeholder type="password" placeholder="Введите пароль" v-model="password"/>
       </div>
       <div class="form__item">
-        <input type="password" class="form__field registration-password-confirm" placeholder="Введите повторно пароль"
-               v-model="confirm_password">
+        <input-placeholder type="password" placeholder="Введите повторно пароль"
+               v-model="confirm_password"/>
       </div>
       <div class="form__item">
         <button class="form__button" :disabled="loading">
@@ -30,7 +30,10 @@
 </template>
 
 <script>
+  import InputPlaceholder from "~/components/forms/InputPlaceholder";
+
   export default {
+    components: {InputPlaceholder},
     data: () => ({
       login: '',
       name: '',

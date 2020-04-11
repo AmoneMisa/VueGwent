@@ -8,15 +8,19 @@
   export default {
     components: {CardsList},
     props: ['fraction'],
-    async updated() {
-      if (this.cards) {
+    async serverPrefetch() {
+      if (!this.fraction) {
         return;
       }
 
       await this.$store.dispatch('fraction/fetchCards', this.fraction.code);
     },
-    async serverPrefetch() {
+    async mounted() {
       if (!this.fraction) {
+        return;
+      }
+
+      if (this.cards) {
         return;
       }
 
@@ -29,6 +33,11 @@
         }
 
         return this.$store.state.fraction.cards[this.fraction.code];
+      }
+    },
+    watch: {
+      async fraction(fraction) {
+        await this.$store.dispatch('fraction/fetchCards', fraction.code);
       }
     }
   }

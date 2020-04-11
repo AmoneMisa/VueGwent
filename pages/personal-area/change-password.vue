@@ -3,7 +3,9 @@
     <div class="main-content__title">Личный кабинет</div>
     <user-info>
       <navigation-menu current-tab="change-password" />
-      <user-change-password />
+      <div class="user-info__password">
+        <user-change-password />
+      </div>
     </user-info>
   </div>
 </template>

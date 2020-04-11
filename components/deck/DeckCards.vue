@@ -13,7 +13,24 @@
         return;
       }
 
-      await this.$store.dispatch('user/deck/fetchCards', this.fraction.code);
+      await Promise.all([
+        this.$store.dispatch('user/deck/fetchCards', this.fraction.code),
+        this.$store.dispatch('user/deck/fetchInfo', this.fraction.code)
+      ]);
+    },
+    async mounted() {
+      if (!this.fraction) {
+        return;
+      }
+
+      if (this.cards) {
+        return;
+      }
+
+      await Promise.all([
+        this.$store.dispatch('user/deck/fetchCards', this.fraction.code),
+        this.$store.dispatch('user/deck/fetchInfo', this.fraction.code)
+      ]);
     },
     computed: {
       cards() {
@@ -32,7 +49,10 @@
     },
     watch: {
       async fraction(fraction) {
-        await this.$store.dispatch('user/deck/fetchCards', fraction.code);
+        await Promise.all([
+          this.$store.dispatch('user/deck/fetchCards', fraction.code),
+          this.$store.dispatch('user/deck/fetchInfo', fraction.code)
+        ]);
       }
     }
   }

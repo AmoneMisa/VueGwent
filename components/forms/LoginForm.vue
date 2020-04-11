@@ -2,10 +2,10 @@
   <div class="form-wrapper">
     <form class="form login-form" @submit.prevent="submit">
       <div class="form__item">
-        <input class="form__field" placeholder="Введите Email или логин" v-model="login">
+        <input-placeholder placeholder="Введите Email или логин" v-model="login"/>
       </div>
       <div class="form__item">
-        <input type="password" class="form__field" placeholder="Введите пароль" v-model="password">
+        <input-placeholder type="password" placeholder="Введите пароль" v-model="password"/>
       </div>
       <div class="form__item">
           <button class="form__button form__button-auth" :disabled="loading">
@@ -20,7 +20,10 @@
 </template>
 
 <script>
+  import InputPlaceholder from "~/components/forms/InputPlaceholder";
+
   export default {
+    components: {InputPlaceholder},
     data: () => ({
       login: '',
       password: '',

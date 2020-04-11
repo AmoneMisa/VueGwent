@@ -55,6 +55,7 @@
 <style lang="scss">
   .user-info__statistic {
     margin-top: 60px;
+    width: 405px;
   }
 
   .statistic__total-games,

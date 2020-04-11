@@ -2,14 +2,7 @@
   <div class="form-wrapper">
     <form class="form forgot-password-form">
       <div class="form__item">
-        <input type="email" class="form__field" placeholder="Введите Email или логин">
-      </div>
-      <div class="form__item">
-        <input type="password" class="form__field"
-               placeholder="Введите пароль, который Вы помните">
-      </div>
-      <div class="form__item">
-        <input type="email" class="form__field" placeholder="Введите Email для связи">
+        <input-placeholder type="email" placeholder="Введите Email или логин"/>
       </div>
       <div class="form__item">
         <div class="form-block__bottom">
@@ -21,7 +14,10 @@
 </template>
 
 <script>
+    import InputPlaceholder from "~/components/forms/InputPlaceholder";
+
     export default {
+      components: {InputPlaceholder}
     }
 </script>
 
