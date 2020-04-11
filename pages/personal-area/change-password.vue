@@ -1,19 +1,20 @@
 <template>
   <div>
     <div class="main-content__title">Личный кабинет</div>
-    <div class="user-info">
+    <user-info>
       <navigation-menu current-tab="change-password" />
       <user-change-password />
-    </div>
+    </user-info>
   </div>
 </template>
 
 <script>
   import NavigationMenu from "~/components/personal-area/navigationMenu";
   import UserChangePassword from "~/components/personal-area/UserChangePassword";
+  import UserInfo from "~/components/personal-area/UserInfo";
 
   export default {
-    components: {NavigationMenu, UserChangePassword},
+    components: {NavigationMenu, UserChangePassword, UserInfo},
     validate ({ store }) {
       return store.state.user.data
     },

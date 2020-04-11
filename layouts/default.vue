@@ -94,6 +94,13 @@
     padding: 20px 0;
   }
 
+  .main-content__title {
+    padding-top: 30px;
+    color: #c6c6c6;
+    font-size: 20px;
+    text-align: center;
+  }
+
   .main-center-wrapper {
     padding: 150px 0 50px;
   }

@@ -8,7 +8,7 @@
         <span class="personal-info__name">{{ user.name }}</span>
       </div>
       <div class=" personal-info__item">Ваша почта:
-        <span class="personal-info__email">Email@example.com</span>
+        <span class="personal-info__email">{{ user.email }}</span>
       </div>
     </div>
   </div>
@@ -19,9 +19,7 @@
     computed: {
       user: function () {
         return this.$store.state.user.data;
-      }, validate ({ store }) {
-        return store.state.user.data
-      },
+      }
     }
   }
 </script>

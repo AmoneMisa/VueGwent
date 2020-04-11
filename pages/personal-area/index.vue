@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="main-content__title">Личный кабинет</div>
-    <div class="user-info">
+    <user-info>
       <navigation-menu current-tab="main-info" />
-      <UserAvatar />
-      <personalInfo />
-      <UserStatisticPrev />
-    </div>
+      <user-avatar />
+      <personal-info />
+      <user-statistic-prev />
+    </user-info>
   </div>
 </template>
 
@@ -17,10 +17,11 @@
   import UserStatisticPrev from "~/components/personal-area/UserStatisticPrev";
   import UserChangePassword from "~/components/personal-area/UserChangePassword";
   import UserStatisticFull from "~/components/personal-area/UserStatisticFull";
+  import UserInfo from "~/components/personal-area/UserInfo";
 
   export default {
     components: {NavigationMenu, UserAvatar, personalInfo,
-      UserStatisticPrev, UserChangePassword, UserStatisticFull},
+      UserStatisticPrev, UserChangePassword, UserStatisticFull, UserInfo},
 
     validate ({ store }) {
       return store.state.user.data
@@ -32,20 +33,5 @@
 </script>
 
 <style lang="scss">
-  .main-content__title {
-    padding-top: 30px;
-    color: #c6c6c6;
-    font-size: 20px;
-    text-align: center;
-  }
 
-  .user-info {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    color: #716556;
-  }
 </style>

@@ -1,19 +1,20 @@
 <template>
   <div>
     <div class="main-content__title">Личный кабинет</div>
-    <div class="user-info">
+    <user-info>
       <navigation-menu current-tab="statistic-games" />
       <user-statistic-full />
-    </div>
+    </user-info>
   </div>
 </template>
 
 <script>
   import NavigationMenu from "~/components/personal-area/navigationMenu";
   import UserStatisticFull from "~/components/personal-area/UserStatisticFull";
+  import UserInfo from "~/components/personal-area/UserInfo";
 
   export default {
-    components: {NavigationMenu, UserStatisticFull},
+    components: {NavigationMenu, UserStatisticFull, UserInfo},
     validate ({ store }) {
       return store.state.user.data
     },

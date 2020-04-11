@@ -31,7 +31,23 @@ router.use((req, res, next) => {
 router.get('/user/', async (req, res) => {
   try {
     let resp = await req.apiClient.get('/user/');
-    res.json(resp.data);
+    res.json({...resp.data, 'email': 'email@example.com'});
+  } catch (e) {
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
+router.post('/user/change_password/', async (req, res) => {
+  try {
+    res.sendStatus(200);
+  } catch (e) {
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
+router.get('/user/stats/', async (req, res) => {
+  try {
+    res.json({'count_games': 500, 'count_won_games': 361});
   } catch (e) {
     res.status(e.response.status).json(e.response.data);
   }
