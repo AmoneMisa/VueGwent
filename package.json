@@ -23,7 +23,8 @@
     "nuxt": "^2.0.0",
     "nuxt-session": "^1.0.3",
     "simplebar-vue": "^1.4.0",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-media": "^1.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

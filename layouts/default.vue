@@ -1,17 +1,36 @@
 <template>
   <div class="main">
     <div class="main__header">
-      <custom-header/>
+      <media :query="{minWidth: 971}">
+        <custom-header/>
+      </media>
+      <media :query="{maxWidth: 970}">
+        <header-mobile/>
+      </media>
     </div>
     <div class="main__content">
+      <media :query="{minWidth: 971}">
       <div class="wrapper">
         <div class="main-content">
           <nuxt/>
         </div>
       </div>
+      </media>
+      <media :query="{maxWidth: 970}">
+        <div class="wrapper-mobile">
+          <div class="main-content">
+            <nuxt/>
+          </div>
+        </div>
+      </media>
     </div>
     <div class="main__footer">
+      <media :query="{minWidth: 971}">
       <custom-footer/>
+      </media>
+      <media :query="{maxWidth: 970}">
+        <footer-mobile />
+      </media>
     </div>
   </div>
 </template>
@@ -19,11 +38,16 @@
   import Header from '~/components/Header';
   import Footer from '~/components/Footer';
 
+  import HeaderMobile from "~/components/HeaderMobile";
+  import FooterMobile from "~/components/FooterMobile";
+
+  import Media from 'vue-media'
 
   export default {
     components: {
       'custom-header': Header,
-      'custom-footer': Footer
+      'custom-footer': Footer,
+      HeaderMobile, Media, FooterMobile
     }
   }
 </script>
@@ -94,13 +118,6 @@
     padding: 20px 0;
   }
 
-  .main-content__title {
-    padding-top: 30px;
-    color: #c6c6c6;
-    font-size: 20px;
-    text-align: center;
-  }
-
   .main-center-wrapper {
     padding: 150px 0 50px;
   }
@@ -134,20 +151,34 @@
   }
 
   @media (max-width: 750px) {
-    .wrapper {
-      width: 340px;
+    .main-center-wrapper {
+      padding: 30px 0;
     }
   }
 
   @media (min-width: 751px) and (max-width: 970px) {
-    .wrapper {
-      width: 730px;
+    .main-center-wrapper {
+      padding: 70px 0 50px;
     }
   }
 
   @media (min-width: 971px) and (max-width: 1199px) {
     .wrapper {
-      width: 950px;
+      width: calc(100% - 50px);
+    }
+  }
+
+  @media (max-width: 750px) {
+    .wrapper-mobile {
+      width: calc(100% - 10px);
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 751px) and (max-width: 970px) {
+    .wrapper-mobile {
+      width: calc(100% - 50px);
+      margin: 0 auto;
     }
   }
 

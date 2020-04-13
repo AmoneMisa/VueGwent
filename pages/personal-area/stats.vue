@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="main-content__title">Личный кабинет</div>
+    <div class="personal-area__title">Личный кабинет</div>
     <user-info>
       <navigation-menu current-tab="statistic-games" />
       <user-statistic-full />

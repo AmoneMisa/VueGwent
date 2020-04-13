@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="main-content__title">Личный кабинет</div>
+    <div class="personal-area__title">Личный кабинет</div>
     <user-info>
       <navigation-menu current-tab="change-password" />
       <div class="user-info__password">
@@ -27,5 +27,10 @@
 </script>
 
 <style lang="scss">
-
+  .personal-area__title {
+    padding-top: 30px;
+    color: #c6c6c6;
+    font-size: 20px;
+    text-align: center;
+  }
 </style>

@@ -56,7 +56,6 @@
   .header {
     background-color: #1e1c16;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
-    position: sticky;
   }
 
   .header__wrapper {
@@ -106,10 +105,6 @@
         color: #886633;
       }
     }
-  }
-
-  .menu__item:first-child {
-    margin-left: 0;
   }
 
   .personal-area {
@@ -180,4 +175,5 @@
     font-size: 18px;
     color: rgba(193, 102, 29, 0.5);
   }
+
 </style>
