@@ -45,6 +45,6 @@
   }
 
   .form-tabs__tab_active {
-    border-bottom-color: #a1844c;
+    border-bottom-color: #bc8e46;
   }
 </style>

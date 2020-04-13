@@ -128,6 +128,7 @@
     position: absolute;
     left: -25px;
     background-color: black;
+    z-index: 5;
   }
 
   .menu__item_mobile {
