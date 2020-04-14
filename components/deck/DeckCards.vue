@@ -1,12 +1,21 @@
 <template>
-  <cards-list v-if="cards" :cards="cards" @card-click="cardClick"/>
+  <div class="media-wrapper">
+    <media :query="{minWidth: 971}">
+      <cards-list v-if="cards" :cards="cards" @card-click="cardClick"/>
+    </media>
+    <media :query="{maxWidth: 970}">
+      <cards-list-mobile v-if="cards" :cards="cards" @card-click="cardClick"/>
+    </media>
+  </div>
 </template>
 
 <script>
   import CardsList from "./CardsList";
+  import CardsListMobile from "~/components/deck-mobile/CardsList";
+  import Media from "vue-media";
 
   export default {
-    components: {CardsList},
+    components: {CardsList, CardsListMobile, Media},
     props: ['fraction'],
     async serverPrefetch() {
       if (!this.fraction) {

@@ -25,18 +25,40 @@
           </media>
           <media :query="{maxWidth: 970}">
             <div class="cards-collection__filters">
-              <div class="cards-collection__filters-menu" @click="changeStateFiltersMenu">Выбрать фильтр карт</div>
               <filters-mobile :current-filter="currentAvailableCardsFilter"
                               @set-current-filter="(filter) => this.currentAvailableCardsFilter = filter"
                               v-if="isActiveFiltersMenu"/>
             </div>
           </media>
-          <div class="cards-collection__cards">
-            <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
-              <deck-available-cards :fraction="currentFraction" v-if="user"/>
-              <fraction-cards :fraction="currentFraction" v-else/>
-            </simplebar>
-          </div>
+          <media :query="{minWidth: 971}">
+            <div class="cards-collection__cards">
+              <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
+                <deck-available-cards :fraction="currentFraction" v-if="user"/>
+                <fraction-cards :fraction="currentFraction" v-else/>
+              </simplebar>
+            </div>
+          </media>
+          <media :query="{maxWidth: 970}">
+            <div class="cards-collection__cards">
+              <div class="cards-collection__filters-menu" @click="changeStateFiltersMenu">Выбрать фильтр карт</div>
+              <div class="cards-collection__cards_mobile" @click="isCurrentDeck" v-if="user">Переключить колоду</div>
+              <div class="cards-collection__cards_mobile" v-else>
+                <nuxt-link to="/" class="cards-collection__alt-title-link">Войдите</nuxt-link>
+                , чтобы собрать колоду
+              </div>
+              <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards" v-if="isCurrentDeckAvailable">
+                <deck-available-cards :fraction="currentFraction" v-if="user"/>
+                <fraction-cards :fraction="currentFraction" v-else/>
+              </simplebar>
+              <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards" v-else>
+                <deck-cards :fraction="currentFraction" v-if="user"/>
+                <div class="cards-collection__alt-title" v-else>
+                  <nuxt-link class="cards-collection__alt-title-link" to="/">Войдите</nuxt-link>
+                  , чтобы собрать колоду
+                </div>
+              </simplebar>
+            </div>
+          </media>
         </div>
       </div>
       <div class="deck-page__deck-stats">
@@ -45,37 +67,30 @@
           v-if="user"
         />
       </div>
-      <div class="deck-page__deck-cards">
-        <div class="cards-collection">
-          <div class="cards-collection__title cards-collection__title-right" v-if="user">Карты колоды</div>
-          <div class="cards-collection__current-filter cards-collection__current-filter-right" v-if="user">{{
-            filtersTitles[currentCardsFilter] || 'Все карты' }}
-          </div>
-          <media :query="{minWidth: 971}">
-          <div class="cards-collection__filters">
-            <filters :current-filter="currentCardsFilter"
-                     @set-current-filter="(filter) => this.currentCardsFilter = filter"
-                     v-if="user"/>
-          </div>
-          </media>
-          <media :query="{maxWidth: 970}">
+      <media :query="{minWidth: 971}">
+        <div class="deck-page__deck-cards">
+          <div class="cards-collection">
+            <div class="cards-collection__title cards-collection__title-right" v-if="user">Карты колоды</div>
+            <div class="cards-collection__current-filter cards-collection__current-filter-right" v-if="user">{{
+              filtersTitles[currentCardsFilter] || 'Все карты' }}
+            </div>
             <div class="cards-collection__filters">
-              <filters-mobile :current-filter="currentCardsFilter"
+              <filters :current-filter="currentCardsFilter"
                        @set-current-filter="(filter) => this.currentCardsFilter = filter"
                        v-if="user"/>
             </div>
-          </media>
-          <div class="cards-collection__cards">
-            <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
-              <deck-cards :fraction="currentFraction" v-if="user"/>
-              <div class="cards-collection__alt-title" v-else>
-                <nuxt-link class="cards-collection__alt-title-link" to="/">Войдите</nuxt-link>
-                , чтобы собрать колоду
-              </div>
-            </simplebar>
+            <div class="cards-collection__cards">
+              <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
+                <deck-cards :fraction="currentFraction" v-if="user"/>
+                <div class="cards-collection__alt-title" v-else>
+                  <nuxt-link class="cards-collection__alt-title-link" to="/">Войдите</nuxt-link>
+                  , чтобы собрать колоду
+                </div>
+              </simplebar>
+            </div>
           </div>
         </div>
-      </div>
+      </media>
     </div>
     <action-buttons v-if="user"/>
   </div>
@@ -112,7 +127,8 @@
           'filter-weather': 'Погодные карты',
           'filter-action': 'Специальные карты',
         },
-        isActiveFiltersMenu: false
+        isActiveFiltersMenu: false,
+        isCurrentDeckAvailable: true
       }
     },
     mounted() {
@@ -152,6 +168,9 @@
     methods: {
       changeStateFiltersMenu() {
         this.isActiveFiltersMenu = !this.isActiveFiltersMenu;
+      },
+      isCurrentDeck() {
+        this.isCurrentDeckAvailable = !this.isCurrentDeckAvailable;
       }
     }
   };
@@ -198,6 +217,12 @@
     padding-right: 15px;
   }
 
+  .cards-collection__cards_mobile {
+    text-align: right;
+    color: $defaultText;
+    margin-bottom: 10px;
+  }
+
   .cards-collection__alt-title {
     display: flex;
     font-size: 28px;
@@ -218,7 +243,6 @@
     }
   }
 
-
   .simple-bar-cards {
     height: 660px;
     position: relative;
@@ -238,7 +262,7 @@
   }
 
   .cards-collection__filters {
-   position: relative;
+    position: relative;
   }
 
   .cards-collection__current-filter {
@@ -259,6 +283,13 @@
   .cards-collection__filters-menu {
     padding-bottom: 10px;
     color: $defaultText;
+    margin-bottom: -35px;
+  }
+
+  @media (max-width: 970px) {
+    .deck-page__deck-stats {
+      width: 160px;
+    }
   }
 </style>
 

@@ -34,15 +34,15 @@
 
   .leader__card {
     margin: 0 auto;
-    margin-bottom: 52px;
-    width: 117px;
-    height: 220px;
+    margin-bottom: 32px;
+    width: 100px;
+    height: 190px;
     border: 1px solid rgba(#b18b48, 0.9);
     overflow: hidden;
   }
 
   .leader__img {
-    width: 117px;
-    height: 220px;
+    width: 100px;
+    height: 190px;
   }
 </style>

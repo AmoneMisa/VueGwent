@@ -26,12 +26,15 @@
     display: flex;
     flex-flow: row wrap;
     padding-right: 30px;
+    width: calc(70vw - 20px);
+    justify-content: center;
+    align-items: center;
   }
 
   .cards-list__item {
-    width: calc((100% - 20px) / 3);
-    padding-top: 20px;
-    padding-right: 20px;
+    width: calc(100% / 4);
+    padding-top: 10px;
+    padding-right: 10px;
     flex: none;
   }
 
