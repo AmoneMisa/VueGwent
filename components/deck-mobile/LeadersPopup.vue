@@ -106,7 +106,6 @@
       pointer-events: none;
       width: 90px;
       height: 170px;
-      border: 1px solid red;
     }
 
   .popup-container__description {
