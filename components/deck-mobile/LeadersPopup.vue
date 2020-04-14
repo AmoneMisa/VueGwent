@@ -16,8 +16,7 @@
           <div class="popup-container__skill">Фольтест топ. ТОП!</div>
         </div>
       </div>
-      <button class="popup-container__button" @click="closeLeadersPopup">
-        <span class="button__text">[Esc]</span>Закрыть
+      <button class="popup-container__button" @click="closeLeadersPopup">Закрыть
         <i class="fal fa-window-close button__close"></i>
       </button>
     </div>
@@ -41,81 +40,89 @@
   .leader__popup-container {
     position: absolute;
     z-index: 1;
-    width: 1250px;
-    height: 660px;
-    background-color: rgba(0, 0, 0, 0.23);
+    width: calc(100vw - 5px);
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
     border: none;
+    left: -76vw;
   }
     .popup-container__wrapper {
-      width: 1200px;
+      width: calc(100% - 20px);
       margin: 0 auto;
+      margin-top: -20px;
       overflow: hidden;
       display: flex;
       justify-content: center;
-      margin-top: -20px;
       flex-direction: column;
     }
     .popup-container__title {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 1);
       color: #bc8e46;
       text-align: center;
-      font-size: 24px;
+      font-size: 18px;
     }
-    .popup-container__cards {
+  .popup-container__cards {
+
+  }
+
+    .cards {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      width: 1450px;
+      width: calc(100vw - 40px);
       position: relative;
       transition: transform .2s ease-in-out;
-      padding: 20px 0;
-      height: 275px;
+      padding: 10px 0;
+      height: 245px;
     }
     .cards__item_neighbor-left {
-      height: 245px;
+      height: 215px;
       .leader__card {
-        width: 125px;
-        height: 245px;
+        width: 105px;
+        height: 215px;
       }
     }
     .cards__item_neighbor-right {
-      height: 245px;
+      height: 215px;
+
       .leader__card {
-        width: 125px;
-        height: 245px;
+        width: 105px;
+        height: 215px;
       }
     }
+
     .cards__item_current {
       position: relative;
       border-radius: 10px;
-      height: 275px;
+      height: 245px;
       box-shadow: 0 0 15px 5px rgba(239, 163, 38, 0.56);
 
       .leader__img {
-        width: 145px;
-        height: 275px;
+        width: 125px;
+        height: 245px;
       }
     }
     .cards__item_hidden {
       pointer-events: none;
-      width: 117px;
-      height: 220px;
+      width: 90px;
+      height: 170px;
+      border: 1px solid red;
     }
 
   .popup-container__description {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     color: #bc8e46;
     text-align: center;
-    padding: 50px 0;
+    padding: 10px 0 25px 0;
   }
   .popup-container__skill {
     color: #675e4c;
   }
   .popup-container__button {
     display: block;
-    width: 140px;
+    width: 100px;
     text-align: center;
-    line-height: 40px;
+    line-height: 25px;
     margin: 20px;
     color: #bc8e46;
     background-color: #171918;
@@ -123,8 +130,8 @@
     box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.9);
     border-radius: 5px;
     position: absolute;
-    right: 20px;
-    top: -120px;
+    right: 0;
+    top: -40px;
   }
   .button__text {
     color: #a19e8e;
