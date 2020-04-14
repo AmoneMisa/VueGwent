@@ -28,21 +28,21 @@
   .leader__title {
     color: #b18b48;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
   }
 
   .leader__card {
     margin: 0 auto;
-    margin-bottom: 32px;
-    width: 100px;
-    height: 190px;
+    margin-bottom: 10px;
+    width: 90px;
+    height: 170px;
     border: 1px solid rgba(#b18b48, 0.9);
     overflow: hidden;
   }
 
   .leader__img {
-    width: 100px;
-    height: 190px;
+    width: 90px;
+    height: 170px;
   }
 </style>

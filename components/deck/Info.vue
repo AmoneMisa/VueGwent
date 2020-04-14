@@ -1,8 +1,19 @@
 <template>
-  <div class="deck-stats">
-    <leaders/>
-    <leaders-popup v-if="isOpenLeadersPopup"/>
-    <stats :info="info"/>
+  <div class="media-wrapper">
+    <media :query="{minWidth: 971}">
+      <div class="deck-stats">
+        <leaders/>
+        <leaders-popup v-if="isOpenLeadersPopup"/>
+        <stats :info="info"/>
+      </div>
+    </media>
+    <media :query="{maxWidth: 970}">
+      <div class="deck-stats">
+        <leaders-mobile/>
+        <leaders-popup-mobile v-if="isOpenLeadersPopup"/>
+        <stats-mobile :info="info"/>
+      </div>
+    </media>
   </div>
 </template>
 
@@ -11,8 +22,13 @@
   import Stats from "./Stats";
   import LeadersPopup from "./LeadersPopup";
 
+  import LeadersPopupMobile from "~/components/deck-mobile/LeadersPopup";
+  import LeadersMobile from "~/components/deck-mobile/Leaders";
+  import StatsMobile from "~/components/deck-mobile/Stats";
+  import Media from "vue-media";
+
   export default {
-    components: {Leaders, Stats, LeadersPopup},
+    components: {Leaders, Stats, LeadersPopup, LeadersMobile, LeadersPopupMobile, Media, StatsMobile},
     props: ['fraction'],
     async serverPrefetch() {
       if (!this.fraction) {

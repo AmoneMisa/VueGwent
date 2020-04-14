@@ -26,7 +26,7 @@
     display: flex;
     flex-flow: row wrap;
     padding-right: 30px;
-    width: calc(70vw - 20px);
+    width: calc(70vw - 10px);
     justify-content: center;
     align-items: center;
   }

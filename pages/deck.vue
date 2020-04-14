@@ -92,7 +92,12 @@
         </div>
       </media>
     </div>
+    <media :query="{minWidth: 971}">
     <action-buttons v-if="user"/>
+    </media>
+    <media :query="{maxWidth: 970}">
+      <action-buttons-mobile v-if="user"/>
+    </media>
   </div>
 </template>
 <script>
@@ -111,6 +116,7 @@
 
   import FractionSliderMobile from "~/components/deck-mobile/FractionSlider";
   import FiltersMobile from "~/components/deck-mobile/Filters";
+  import ActionButtonsMobile from "~/components/deck-mobile/ActionButtons";
 
   export default {
     data() {
@@ -128,7 +134,7 @@
           'filter-action': 'Специальные карты',
         },
         isActiveFiltersMenu: false,
-        isCurrentDeckAvailable: true
+        isCurrentDeckAvailable: true,
       }
     },
     mounted() {
@@ -149,7 +155,7 @@
       DeckCards, FractionSlider, FractionCards,
       Filters, Simplebar, Info, ActionButtons,
       LeadersPopup, Media, FractionSliderMobile,
-      FiltersMobile
+      FiltersMobile, ActionButtonsMobile
     },
     head: {
       title: 'Колода'
@@ -163,7 +169,7 @@
       },
       user: function () {
         return this.$store.state.user.data;
-      },
+      }
     },
     methods: {
       changeStateFiltersMenu() {
@@ -289,6 +295,18 @@
   @media (max-width: 970px) {
     .deck-page__deck-stats {
       width: 160px;
+    }
+
+    .cards-collection__cards {
+      margin-top: 30px;
+      overflow: hidden;
+      height: 90vh;
+      padding-right: 15px;
+    }
+
+    .simple-bar-cards {
+      height: 90vh;
+      position: relative;
     }
   }
 </style>
