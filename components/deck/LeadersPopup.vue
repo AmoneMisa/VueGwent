@@ -9,17 +9,17 @@
             <div class="cards__item_hidden"></div>
           </div>
         </div>
-      </div>
-      <div class="popup-container__description">
-        <div class="description">
-          <div class="popup-container__text">Умение лидера</div>
-          <div class="popup-container__skill">Фольтест топ. ТОП!</div>
+        <div class="popup-container__description">
+          <div class="description">
+            <div class="popup-container__text">Умение лидера</div>
+            <div class="popup-container__skill">Фольтест топ. ТОП!</div>
+          </div>
         </div>
+        <button class="popup-container__button" @click="closeLeadersPopup">
+          <span class="button__text">[Esc]</span>Закрыть
+          <i class="fal fa-window-close button__close"></i>
+        </button>
       </div>
-      <button class="popup-container__button" @click="closeLeadersPopup">
-        <span class="button__text">[Esc]</span>Закрыть
-        <i class="fal fa-window-close button__close"></i>
-      </button>
     </div>
   </div>
 
@@ -41,25 +41,30 @@
   .leader__popup-container {
     position: absolute;
     z-index: 1;
-    width: 1250px;
-    height: 660px;
-    background-color: rgba(0, 0, 0, 0.23);
+    width: 98vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
     border: none;
+    overflow: hidden;
+    top: -60px;
   }
     .popup-container__wrapper {
       width: 1200px;
+      height: 60vh;
       margin: 0 auto;
       overflow: hidden;
       display: flex;
-      justify-content: center;
-      margin-top: -20px;
+      justify-content: space-between;
       flex-direction: column;
+      position: relative;
     }
     .popup-container__title {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 1);
       color: #bc8e46;
       text-align: center;
       font-size: 24px;
+      padding-bottom: 40px;
+      border-radius: 10px;
     }
     .popup-container__cards {
       display: flex;
@@ -103,10 +108,11 @@
     }
 
   .popup-container__description {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     color: #bc8e46;
     text-align: center;
     padding: 50px 0;
+    border-radius: 10px;
   }
   .popup-container__skill {
     color: #675e4c;
@@ -123,8 +129,8 @@
     box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.9);
     border-radius: 5px;
     position: absolute;
-    right: 20px;
-    top: -120px;
+    right: 0;
+    top: 0;
   }
   .button__text {
     color: #a19e8e;

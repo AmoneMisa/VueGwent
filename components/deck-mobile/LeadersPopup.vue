@@ -34,7 +34,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import "~/assets/_variables";
 
   .leader__popup-container {

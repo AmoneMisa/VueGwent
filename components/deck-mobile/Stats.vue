@@ -36,7 +36,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .statistic__item {
     text-align: center;
   }
