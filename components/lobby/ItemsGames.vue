@@ -17,15 +17,20 @@
       </div>
       <div class="items-games__rate">10</div>
       <div class="items-games__action">
-        <button class="items-games__button">{{ buttonText }}</button>
+        <custom-button class="button_middle" :button_text="button_text"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import Button from "../Button";
+
   export default {
-    props: ['buttonText']
+    props: ['button_text'],
+    components: {
+      'custom-button': Button
+    }
   }
 </script>
 
@@ -120,21 +125,4 @@
     align-items: center;
   }
 
-  .items-games__button {
-    width: 120px;
-    height: 40px;
-    font-size: 18px;
-    text-align: center;
-    background-color: #1d1d18;
-    color: #a5a195;
-    border: 1px solid #191917;
-    border-radius: 5px;
-    padding: 0 10px;
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset;
-    transition: box-shadow .2s ease-in-out;
-
-    &:hover {
-      box-shadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset, 0 0 10px 5px rgba(#feaf5c, 0.56);
-    }
-  }
 </style>

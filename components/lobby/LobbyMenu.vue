@@ -22,11 +22,8 @@
   @import "assets/variables";
 
 .lobby-menu {
-  position: absolute;
-  left: -160px;
   border-radius: 5px;
-  border: 1px solid $borderDeck;
-  padding: 10px 20px;
+  display: flex;
   a {
     color: $buttonText;
     transition: color .2s ease-in-out;
@@ -35,11 +32,19 @@
     }
   }
   .lobby-menu__item {
-    margin-bottom: 10px;
-    border-radius: 10px;
-    background-color: $button;
-    width: 100px;
+    height: 40px;
     text-align: center;
+    line-height: 40px;
+    background-color: $button;
+    transition: box-shadow .2s ease-in-out;
+    color: $buttonText;
+    border: 1px solid $button;
+    border-radius: 5px;
+    box-shadow: $customShadow;
+    padding: 0 10px;
+    width: 100px;
+    font-size: 16px;
+    margin-left: 10px;
   }
 }
 </style>

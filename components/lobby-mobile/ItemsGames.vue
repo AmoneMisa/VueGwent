@@ -17,20 +17,25 @@
       </div>
       <div class="items-games__rate">10</div>
       <div class="items-games__action">
-        <button class="items-games__button">{{ buttonText }}</button>
+        <custom-button :button_text="button_text" class="button_mobile button_mobile_middle"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import Button from "../Button";
+
   export default {
-    props: ['buttonText']
+    props: ['button_text'],
+    components: {
+      'custom-button': Button
+    }
   }
 </script>
 
 <style lang="scss" scoped>
-  @import "~/assets/_variables";
+  @import "assets/variables";
 
   .items-games {
     display: flex;
@@ -124,23 +129,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .items-games__button {
-    width: 80px;
-    height: 30px;
-    font-size: 14px;
-    text-align: center;
-    background-color: #1d1d18;
-    color: #a5a195;
-    border: 1px solid #191917;
-    border-radius: 5px;
-    padding: 0 5px;
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset;
-    transition: box-shadow .2s ease-in-out;
-
-    &:hover {
-      box-shadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset, 0 0 10px 5px rgba(#feaf5c, 0.56);
-    }
   }
 </style>

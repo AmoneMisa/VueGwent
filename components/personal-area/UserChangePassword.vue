@@ -10,16 +10,27 @@
     <div class="password-block__item">
       <input-placeholder v-model="confirmPassword" placeholder="Повторите новый пароль" type="password"/>
     </div>
-    <button class="password-block__button-submit">Изменить пароль</button>
+    <media :query="{minWidth: 971}">
+    <custom-button button_text="Изменить пароль"/>
+    </media>
+    <media :query="{maxWidth: 970}">
+      <custom-button button_text="Изменить пароль" class="button_mobile"/>
+    </media>
     <span class="error">{{ error }}</span>
   </form>
 </template>
 
 <script>
   import InputPlaceholder from "~/components/forms/InputPlaceholder";
+  import Button from "../Button";
+  import Media from "vue-media";
 
   export default {
-    components: {InputPlaceholder},
+    components: {
+      InputPlaceholder,
+      'custom-button': Button,
+      Media
+    },
     data() {
       return {
         currentPassword: '',
@@ -65,24 +76,6 @@
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
-  }
-
-  .password-block__button-submit {
-    height: 40px;
-    text-align: center;
-    background-color: #1d1d18;
-    transition: box-shadow .2s ease-in-out;
-    color: #a5a195;
-    border: 1px solid #1d1d18;
-    border-radius: 5px;
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset;
-    cursor: pointer;
-    padding: 0 10px;
-    width: 160px;
-
-    &:hover {
-      box-shadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset, 0 0 15px 5px rgba(#feaf5c, 0.6);
-    }
   }
 
   .password-block__item {

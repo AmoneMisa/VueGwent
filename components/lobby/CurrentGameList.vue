@@ -5,7 +5,7 @@
     <filters/>
     <div class="game-list__items-games">
       <simplebar data-simplebar-auto-hide="false" class="simple-bar-custom">
-        <items-games button-text="Смотреть"/>
+        <items-games button_text="Смотреть"/>
       </simplebar>
     </div>
       </div>
@@ -15,7 +15,7 @@
         <filters-mobile />
         <div class="game-list__items-games">
           <simplebar data-simplebar-auto-hide="false" class="simple-bar-custom-mobile">
-            <items-games-mobile button-text="Смотреть" />
+            <items-games-mobile button_text="Смотреть" />
           </simplebar>
         </div>
       </div>

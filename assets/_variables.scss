@@ -29,7 +29,9 @@ $customBorder : linear-gradient(
 
 /////////////////Shadow//////////////
 
+$customShadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset;
 $shadowHover : #feaf5c;
+$shadowHoverButton: $customShadow, 0 0 15px 5px rgba($shadowHover, 0.6);
 
 ////////////////////Buttons///////////////////
 

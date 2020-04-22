@@ -1,8 +1,5 @@
 <template>
   <div class="lobby">
-    <media :query="{minWidth: 971}">
-      <lobby-menu/>
-    </media>
     <media :query="{maxWidth: 970}">
       <lobby-menu-mobile/>
     </media>
@@ -15,15 +12,20 @@
       </media>
       <div class="lobby__main-content-game">
         <div class="main-content-game">
-          <div class="main-content-game__titles">
-            <div class="main-content-game__title"
-                 @click="() => currentGameList = 'games'"
-                 :class="{'main-content-game__title_current' : currentGameList === 'games'}">Список игр
+          <div class="main-content-game__actions">
+            <div class="main-content-game__titles">
+              <div class="main-content-game__title"
+                   @click="() => currentGameList = 'games'"
+                   :class="{'main-content-game__title_current' : currentGameList === 'games'}">Список игр
+              </div>
+              <div class="main-content-game__title"
+                   @click="() => currentGameList = 'current-games'"
+                   :class="{'main-content-game__title_current' : currentGameList === 'current-games'}">Текущие игры
+              </div>
             </div>
-            <div class="main-content-game__title"
-                 @click="() => currentGameList = 'current-games'"
-                 :class="{'main-content-game__title_current' : currentGameList === 'current-games'}">Текущие игры
-            </div>
+            <media :query="{minWidth: 971}">
+              <lobby-menu/>
+            </media>
           </div>
           <div class="main-content-game__current-game-list main-content-game__game-list">
             <game-list v-if="currentGameList === 'games'"/>
@@ -85,12 +87,17 @@
     margin-top: 20px;
   }
 
+  .main-content-game__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
   .main-content-game__titles {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     font-size: 18px;
-    margin-top: 10px;
   }
 
   .main-content-game__title {
