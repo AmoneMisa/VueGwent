@@ -17,7 +17,7 @@
       </div>
       <div class="items-games__rate">10</div>
       <div class="items-games__action">
-        <custom-button :button_text="button_text" class="button_mobile button_mobile_middle"/>
+        <custom-button class="button_mobile button_mobile_middle">{{ button_text }}</custom-button>
       </div>
     </div>
   </div>
@@ -97,7 +97,6 @@
   .items-games__user-photo-img {
     width: 40px;
     height: 40px;
-
   }
 
   .items-games__inner-photo-text {
@@ -121,6 +120,7 @@
     justify-content: center;
     font-size: 18px;
     color: #b0b0ae;
+    margin-right: 10px;
   }
 
   .items-games__action {

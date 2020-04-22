@@ -29,21 +29,21 @@
         <div class="user-place__little-buttons">
           <div class="little-buttons">
             <div class="little-button__item">
-              <button class="button little-button button__user-data">
+              <custom-button class="button_mobile button_mobile_icon">
                 <img src="/imgs/lobby/co_gwent_book.png" class="little-button__icon">
-              </button>
+              </custom-button>
               <div class="button__description">Данные</div>
             </div>
             <div class="little-button__item">
-              <button class="button little-button button__rates">
+              <custom-button class="button_mobile button_mobile_icon">
                 <img src="/imgs/lobby/achiev_gwint_master2.png" class="little-button__icon">
-              </button>
+              </custom-button>
               <div class="button__description">Рейтинг</div>
             </div>
           </div>
         </div>
         <div class="user-place__button">
-          <button class="button button__create-game">Создать игру</button>
+          <custom-button class="button_mobile button_mobile_middle">Создать игру</custom-button>
         </div>
       </div>
     </div>
@@ -51,7 +51,11 @@
 </template>
 
 <script>
+  import Button from "../Button";
   export default {
+  components: {
+    'custom-button': Button
+  }
   }
 </script>
 
@@ -165,26 +169,6 @@
     align-items: center;
   }
 
-  .button {
-    color: #a5a195;
-    font-size: 14px;
-    background-color: #1d1d18;
-    cursor: pointer;
-    border-radius: 5px;
-    height: 30px;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 5px;
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6) inset;
-    border: 1px solid #1d1d18;
-    transition: box-shadow .2s ease-in-out;
-    &:hover {
-      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6) inset, 0 0 5px 2px rgba(#feaf5c, 0.3);
-    }
-  }
-
   .little-buttons {
     display: flex;
     width: 100px;
@@ -193,12 +177,6 @@
 
   .little-button__item {
     margin-bottom: 5px;
-  }
-
-  .little-button {
-    width: 45px;
-    height: 35px;
-    background-color: black;
   }
 
   .little-button__icon {

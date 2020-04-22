@@ -1,10 +1,8 @@
 <template>
   <div class="deck-page__actions">
     <div class="actions">
-      <div class="actions__item actions__start-game">
-        <button class="actions__button">
+      <div class="actions__item">
           <nuxt-link class="actions__text" to="/lobby/">Начать игру</nuxt-link>
-        </button>
       </div>
     </div>
   </div>
@@ -33,7 +31,8 @@
     margin-right: 30px;
   }
 
-  .actions__button {
+  .actions__text {
+    display: block;
     margin-right: 5px;
     background-color: #1d1d18;
     color: #a5a195;
@@ -43,23 +42,6 @@
     width: 30px;
     height: 30px;
     font-size: 20px;
-  }
-
-  .actions__start-game {
-    .actions__button {
-      width: 100px;
-      font-size: 14px;
-    }
-  }
-
-  .actions__text {
-    color: #b18b48;
-  }
-
-  .field-size__icon {
-    color: #655940;
-    font-size: 30px;
-    margin-right: 5px;
   }
 
 </style>

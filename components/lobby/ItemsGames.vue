@@ -17,7 +17,7 @@
       </div>
       <div class="items-games__rate">10</div>
       <div class="items-games__action">
-        <custom-button class="button_middle" :button_text="button_text"/>
+        <custom-button class="button_middle">{{ button_text }}</custom-button>
       </div>
     </div>
   </div>

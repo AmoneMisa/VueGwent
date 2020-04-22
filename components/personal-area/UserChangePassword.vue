@@ -14,7 +14,7 @@
     <custom-button button_text="Изменить пароль"/>
     </media>
     <media :query="{maxWidth: 970}">
-      <custom-button button_text="Изменить пароль" class="button_mobile"/>
+      <custom-button class="button_mobile">Изменить пароль</custom-button>
     </media>
     <span class="error">{{ error }}</span>
   </form>

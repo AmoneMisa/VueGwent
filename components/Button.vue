@@ -1,11 +1,10 @@
 <template>
-<button class="button">{{ button_text }}</button>
+  <button class="button"><slot></slot></button>
 </template>
 
 <script>
-    export default {
-    props: ['button_text']
-    }
+  export default {
+  }
 </script>
 
 <style lang="scss">
@@ -24,49 +23,59 @@
     padding: 0 10px;
     width: 160px;
     font-size: 16px;
+
     &:hover {
       box-shadow: $shadowHoverButton;
     }
   }
 
   .button_dark {
-    background-color: $buttonDark!important;
-    color: $buttonDarkText!important;
-    border: 1px solid $buttonDark!important;
+    background-color: $buttonDark !important;
+    color: $buttonDarkText !important;
+    border: 1px solid $buttonDark !important;
   }
 
   .button_font-low {
-    font-size: 14px!important;
+    font-size: 14px !important;
   }
 
   .button_middle {
-    width: 120px!important;
+    width: 120px !important;
   }
 
   .button_little {
-    width: 80px!important;
+    width: 70px !important;
+    height: 50px!important;
+    background-color: black;
   }
 
   .button_mobile {
-    height: 30px!important;
-    width: 140px!important;
-    font-size: 14px!important;
-    transition: none!important;
-    padding: 0 5px!important;
+    height: 30px !important;
+    width: 140px !important;
+    font-size: 14px !important;
+    transition: none !important;
+    padding: 0 5px !important;
+
     &:hover {
-      box-shadow: $customShadow!important;
+      box-shadow: $customShadow !important;
     }
   }
 
   .button_mobile_big {
-    width: 120px!important;
+    width: 120px !important;
   }
 
   .button_mobile_middle {
-    width: 80px!important;
+    width: 100px !important;
   }
 
   .button_mobile_little {
-    width: 40px!important;
+    width: 45px !important;
+  }
+
+  .button_mobile_icon {
+    height: 35px !important;
+    width: 45px !important;
+    background-color: black;
   }
 </style>
