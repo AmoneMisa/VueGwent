@@ -6,7 +6,7 @@
       </div>
       <div class="form__item">
         <div class="form-block__bottom">
-          <button class="form__button"><span>Восстановить пароль</span></button>
+          <custom-button class="button_form-button">Восстановить пароль</custom-button>
         </div>
       </div>
     </form>
@@ -15,9 +15,10 @@
 
 <script>
     import InputPlaceholder from "~/components/forms/InputPlaceholder";
-
+    import Button from "../Button";
     export default {
-      components: {InputPlaceholder}
+      components: {InputPlaceholder,
+      'custom-button': Button}
     }
 </script>
 

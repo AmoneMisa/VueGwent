@@ -29,18 +29,8 @@
     }
   }
 
-  .button_dark {
-    background-color: $buttonDark !important;
-    color: $buttonDarkText !important;
-    border: 1px solid $buttonDark !important;
-  }
-
-  .button_font-low {
-    font-size: 14px !important;
-  }
-
-  .button_middle {
-    width: 120px !important;
+  .button_form-button {
+    width: auto;
   }
 
   .button_little {
@@ -67,10 +57,6 @@
 
   .button_mobile_middle {
     width: 100px !important;
-  }
-
-  .button_mobile_little {
-    width: 45px !important;
   }
 
   .button_mobile_icon {

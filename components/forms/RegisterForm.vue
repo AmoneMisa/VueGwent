@@ -18,9 +18,9 @@
                v-model="confirm_password"/>
       </div>
       <div class="form__item">
-        <button class="form__button" :disabled="loading">
+        <custom-button :disabled="loading" class="button_form-button">
           {{ loading ? 'Подождите..' : 'Зарегистрироваться' }}
-        </button>
+        </custom-button>
       </div>
       <div class="form__item" v-if="error">
         <span class="form__error">{{ error }}</span>
@@ -31,9 +31,10 @@
 
 <script>
   import InputPlaceholder from "~/components/forms/InputPlaceholder";
+  import Button from "../Button";
 
   export default {
-    components: {InputPlaceholder},
+    components: {InputPlaceholder, 'custom-button': Button},
     data: () => ({
       login: '',
       name: '',

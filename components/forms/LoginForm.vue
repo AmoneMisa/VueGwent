@@ -8,9 +8,9 @@
         <input-placeholder type="password" placeholder="Введите пароль" v-model="password"/>
       </div>
       <div class="form__item">
-          <button class="form__button form__button-auth" :disabled="loading">
+          <custom-button :disabled="loading">
             {{ loading ? 'Подождите..' : 'Войти' }}
-          </button>
+          </custom-button>
       </div>
       <div class="form__item" v-if="error">
         <span class="form__error">{{ error }}</span>
@@ -21,9 +21,10 @@
 
 <script>
   import InputPlaceholder from "~/components/forms/InputPlaceholder";
+  import Button from "../Button";
 
   export default {
-    components: {InputPlaceholder},
+    components: {InputPlaceholder, 'custom-button': Button},
     data: () => ({
       login: '',
       password: '',

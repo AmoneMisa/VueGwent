@@ -11,27 +11,6 @@
   margin-bottom: 20px;
 }
 
-.form__button {
-  height: 40px;
-  text-align: center;
-  background-color: #1d1d18;
-  transition: box-shadow .2s ease-in-out;
-  color: #a5a195;
-  border: 1px solid #1d1d18;
-  border-radius: 5px;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset;
-  cursor: pointer;
-  padding: 0 10px;
-  a {
-    color: #a5a195;
-    line-height: 40px;
-  }
-}
-
-.form__button:hover {
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset, 0 0 15px 5px rgba(#feaf5c, 0.56);
-}
-
 .form__button-auth {
   width: 120px;
 }

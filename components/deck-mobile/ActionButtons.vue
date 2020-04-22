@@ -1,9 +1,7 @@
 <template>
   <div class="deck-page__actions">
     <div class="actions">
-      <div class="actions__item">
           <nuxt-link class="actions__text" to="/lobby/">Начать игру</nuxt-link>
-      </div>
     </div>
   </div>
 </template>
