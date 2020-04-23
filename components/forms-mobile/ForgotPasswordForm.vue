@@ -6,9 +6,9 @@
       </div>
       <div class="form__item">
         <div class="form-block__bottom">
-          <button class="form__button" :disabled="loading">
+          <custom-button class="button__mobile_form-button" :disabled="loading">
             {{ loading ? 'Подождите..' : 'Восстановить пароль' }}
-          </button>
+          </custom-button>
         </div>
       </div>
       <div class="form__item" v-if="error">
@@ -20,9 +20,10 @@
 
 <script>
     import InputPlaceholder from "~/components/forms/InputPlaceholder";
+    import Button from "../Button";
 
     export default {
-      components: {InputPlaceholder},
+      components: {InputPlaceholder, 'custom-button': Button},
       data: () => ({
         login: '',
         error: null,

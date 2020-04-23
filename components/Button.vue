@@ -33,6 +33,17 @@
     width: auto;
   }
 
+  .button__mobile_form-button {
+    width: auto;
+    font-size: 14px;
+    height: 35px;
+  }
+
+
+  .button_middle {
+    width: 120px;
+  }
+
   .button_little {
     width: 70px !important;
     height: 50px!important;
