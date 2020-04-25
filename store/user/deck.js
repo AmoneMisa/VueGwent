@@ -28,11 +28,11 @@ export const actions = {
     commit('setCards', {fractionCode, cards});
   },
   async fetchAvailableCards({commit}, fractionCode) {
-    let cards = await this.$axios.$get('/api/user/deck/' + fractionCode + '/available_card/');
+    let cards = await this.$axios.$get('/api/user/deck/' + fractionCode + '/card/available/');
     commit('setAvailableCards', {fractionCode, cards});
   },
   async addCard({state, commit}, {fractionCode, card}) {
-    await this.$axios.$put('/api/user/deck/' + fractionCode + '/card/', {'card_code': card.code});
+    await this.$axios.$put('/api/user/deck/' + fractionCode + '/card/', {'cardCode': card.code});
     let availableCards = state.available_cards[fractionCode].filter(_card => card !== _card);
     commit('setAvailableCards', {fractionCode, cards: availableCards});
     let cards = [...state.cards[fractionCode], card];

@@ -11,7 +11,7 @@
       <input-placeholder v-model="confirmPassword" placeholder="Повторите новый пароль" type="password"/>
     </div>
     <media :query="{minWidth: 971}">
-    <custom-button button_text="Изменить пароль"/>
+    <custom-button>Изменить пароль</custom-button>
     </media>
     <media :query="{maxWidth: 970}">
       <custom-button class="button_mobile">Изменить пароль</custom-button>

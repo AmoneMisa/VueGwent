@@ -89,9 +89,9 @@ router.delete('/user/deck/:code/card/:card_code/', async (req, res) => {
   }
 });
 
-router.get('/user/deck/:code/available_card/', async (req, res) => {
+router.get('/user/deck/:code/card/available/', async (req, res) => {
   try {
-    let resp = await req.apiClient.get('/user/deck/' + req.params.code + '/available_card/');
+    let resp = await req.apiClient.get('/user/deck/' + req.params.code + '/card/available/');
     res.json(resp.data);
   } catch (e) {
     res.status(e.response.status).json(e.response.data);
@@ -120,7 +120,7 @@ router.post('/login/', async (req, res) => {
   try {
     let resp = await req.apiClient.post('/login/', req.body);
     req.session.api_token = resp.data['token'];
-    req.session.api_refresh_token = resp.data['refresh_token'];
+    req.session.api_refresh_token = resp.data['refreshToken'];
     res.sendStatus(200);
   } catch (e) {
     res.status(e.response.status).json(e.response.data);
@@ -135,7 +135,7 @@ router.post('/register/', async (req, res) => {
       password: req.body.password
     });
     req.session.api_token = resp.data['token'];
-    req.session.api_refresh_token = resp.data['refresh_token'];
+    req.session.api_refresh_token = resp.data['refreshToken'];
     res.sendStatus(200);
   } catch (e) {
     res.status(e.response.status).json(e.response.data);
