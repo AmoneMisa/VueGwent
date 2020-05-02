@@ -15,7 +15,7 @@
       </div>
       <div class="form__item">
         <input-placeholder type="password" placeholder="Введите повторно пароль"
-               v-model="confirm_password"/>
+                           v-model="confirm_password"/>
       </div>
       <div class="form__item">
         <custom-button :disabled="loading" class="button_form-button">
@@ -49,6 +49,31 @@
 
         if (this.password !== this.confirm_password) {
           this.error = 'Пароли должны совпадать';
+          return;
+        }
+
+        if (this.password.length < 6) {
+          this.error = 'Пароль должен быть длинной более 6 символов';
+          return;
+        }
+
+        if (!this.password.match(/[A-ZА-ЯЁ]/)) {
+          this.error = 'Пароль должен содержать, хотя бы, одну заглавную букву';
+          return;
+        }
+
+        if (!this.password.match(/[a-zа-яё]/)) {
+          this.error = 'Пароль должен содержать, хотя бы, одну строчную букву';
+          return;
+        }
+
+        if (!this.password.match(/[0-9]/)) {
+          this.error = 'Пароль должен содержать, хотя бы, одну цифру';
+          return;
+        }
+
+        if (!this.password.match(/[^A-ZА-ЯЁa-zа-яё0-9]/)) {
+          this.error = 'Пароль должен содержать, хотя бы, один спец. символ';
           return;
         }
 

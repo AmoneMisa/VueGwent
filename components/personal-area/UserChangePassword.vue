@@ -1,13 +1,13 @@
 <template>
-  <form class="password-block" @submit.prevent="sendForm">
-    <div class="password-block__title">Изменить пароль</div>
-    <div class="password-block__item">
+  <form class="password-block user-form-block" @submit.prevent="sendForm">
+    <div class="password-block__title user-form-block__title">Изменить пароль</div>
+    <div class="password-block__item user-form-block__item">
       <input-placeholder v-model="currentPassword" placeholder="Введите текущий пароль" type="password"/>
     </div>
-    <div class="password-block__item">
+    <div class="password-block__item user-form-block__item">
       <input-placeholder v-model="password" placeholder="Введите новый пароль" type="password"/>
     </div>
-    <div class="password-block__item">
+    <div class="password-block__item user-form-block__item">
       <input-placeholder v-model="confirmPassword" placeholder="Повторите новый пароль" type="password"/>
     </div>
     <media :query="{minWidth: 971}">
@@ -66,19 +66,5 @@
 </script>
 
 <style lang="scss">
-  .password-block {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .password-block__title {
-    color: #c6c6c6;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .password-block__item {
-    margin-bottom: 20px;
-  }
+  @import 'assets/personalAreaForms';
 </style>

@@ -21,7 +21,4 @@
     color: #716556;
   }
 
-  .user-info__password {
-    margin-top: 20px;
-  }
 </style>

@@ -2,7 +2,7 @@
   <div class="cards-list">
     <div class="cards-list__item" v-for="card in cards" :key="card.id" @click="() => cardClick(card)">
       <div class="cards-list__item-inner">
-        <img class="cards-list__item-img" :src="card.card" :alt="card.code"/>
+        <img class="cards-list__item-img" :src="card.imageUrl" :alt="card.code"/>
       </div>
     </div>
   </div>

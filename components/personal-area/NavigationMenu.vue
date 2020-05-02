@@ -6,24 +6,35 @@
     >
       Основная информация
     </nuxt-link>
-    <nuxt-link
-      :class="{'navigation-menu__item': true, 'navigation-menu__item_current': currentTab === 'statistic-games'}"
-      to="/personal-area/stats/"
-    >
-      Статистика игр
-    </nuxt-link>
+    <media :query="{minWidth: 971}">
+      <nuxt-link
+        :class="{'navigation-menu__item': true, 'navigation-menu__item_current': currentTab === 'statistic-games'}"
+        to="/personal-area/stats/"
+      >
+        Статистика игр
+      </nuxt-link>
+    </media>
     <nuxt-link
       :class="{'navigation-menu__item': true,  'navigation-menu__item_current': currentTab === 'change-password'}"
       to="/personal-area/change-password/"
     >
       Сменить пароль
     </nuxt-link>
+    <nuxt-link
+      :class="{'navigation-menu__item': true, 'navigation-menu__item_current': currentTab === 'edit-personal-data'}"
+      to="/personal-area/edit-personal-data"
+    >
+      Редактировать данные
+    </nuxt-link>
   </div>
 </template>
 
 <script>
+  import Media from 'vue-media';
+
   export default {
-    props: ['currentTab']
+    props: ['currentTab'],
+    components: {Media}
   }
 </script>
 

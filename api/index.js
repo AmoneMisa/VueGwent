@@ -142,9 +142,9 @@ router.post('/register/', async (req, res) => {
   }
 });
 
-router.post('/logout/', async (req, res) => {
+router.post('/user/logout/', async (req, res) => {
   try {
-    await req.apiClient.post('/logout/', {});
+    await req.apiClient.post('/user/logout/', {});
     delete req.session.api_token;
     delete req.session.api_refresh_token;
     res.sendStatus(200);

@@ -16,31 +16,31 @@
       </div>
     </div>
     <div class="chat">
-      <div class="chat__messages" data-simplebar="init">
+      <div class="chat__messages">
         <simplebar data-simplebar-auto-hide="false" class="simple-bar-chat">
-        <div class="messages">
-          <div class="message">
-            <div class="message__time">[10:40:09]</div>
-            <div class="message__user-avatar">
-              <img src="/imgs/lobby/your_turn.png" class="message__user-avatar-img">
+          <div class="messages">
+            <div class="message" v-for="i in 10" :key="i = 0">
+              <div class="message__time">[10:40:09]</div>
+              <div class="message__user-avatar">
+                <img src="/imgs/lobby/your_turn.png" class="message__user-avatar-img">
+              </div>
+              <div class="message__username">Пользователь:</div>
+              <div class="message__text">lorem ipsum.</div>
             </div>
-            <div class="message__username">Пользователь:</div>
-            <div class="message__text">lorem ipsum.</div>
-          </div>
-          <div class="message system-message">
-            <div class="message__time">[10:40:09]</div>
-            <div class="message__system-name">Система:</div>
-            <div class="message__system-text">Тех. работы завершены.</div>
-          </div>
-          <div class="message admin-message">
-            <div class="message__time">[10:40:09]</div>
-            <div class="message__user-avatar">
-              <img src="/imgs/lobby/your_turn.png" class="message__user-avatar-img">
+            <div class="message system-message">
+              <div class="message__time">[10:40:09]</div>
+              <div class="message__system-name">Система:</div>
+              <div class="message__system-text">Тех. работы завершены.</div>
             </div>
-            <div class="message__admin-username">Администратор:</div>
-            <div class="message__text">Фольтест топ.</div>
+            <div class="message admin-message">
+              <div class="message__time">[10:40:09]</div>
+              <div class="message__user-avatar">
+                <img src="/imgs/lobby/your_turn.png" class="message__user-avatar-img">
+              </div>
+              <div class="message__admin-username">Администратор:</div>
+              <div class="message__text">Фольтест топ.</div>
+            </div>
           </div>
-        </div>
         </simplebar>
       </div>
       <div class="chat__user-message">
@@ -52,11 +52,11 @@
 
 <script>
   import Simplebar from 'simplebar-vue';
-  import 'simplebar/dist/simplebar.min.css';
 
   export default {
-    components :
-    Simplebar
+    components: {
+      Simplebar
+    }
   }
 </script>
 
@@ -110,6 +110,7 @@
     height: 300px;
 
   }
+
   .message {
     display: flex;
     align-items: center;
@@ -189,5 +190,6 @@
 
   .simple-bar-chat {
     height: 300px;
+    position: relative;
   }
 </style>

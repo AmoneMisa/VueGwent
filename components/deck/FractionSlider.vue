@@ -4,7 +4,7 @@
       <div class="fractions-deck" v-for="fraction of fractions" :key="fraction.id">
         <div class="fractions-deck__wrapper">
           <div class="fractions-deck__icon">
-            <img class="fractions-deck__icon-img" :src="fraction.icon" :alt="fraction.name" />
+            <img class="fractions-deck__icon-img" :src="fraction.iconUrl" :alt="fraction.name" />
           </div>
           <div class="fractions-deck__name">{{ fraction.name }}</div>
         </div>

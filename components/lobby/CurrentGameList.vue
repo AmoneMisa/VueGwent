@@ -5,7 +5,7 @@
     <filters/>
     <div class="game-list__items-games">
       <simplebar data-simplebar-auto-hide="false" class="simple-bar-custom">
-        <items-games button_text="Смотреть"/>
+        <items-games button_text="Смотреть" v-for="i in 10" :key="i = 0"/>
       </simplebar>
     </div>
       </div>
@@ -13,9 +13,9 @@
     <media :query="{maxWidth: 970}">
       <div class="media-wrapper">
         <filters-mobile />
-        <div class="game-list__items-games">
+        <div class="game-list__items-games game-list__items-games_mobile">
           <simplebar data-simplebar-auto-hide="false" class="simple-bar-custom-mobile">
-            <items-games-mobile button_text="Смотреть" />
+            <items-games-mobile button_text="Смотреть" v-for="i in 10" :key="i = 0" />
           </simplebar>
         </div>
       </div>
@@ -39,5 +39,22 @@
 </script>
 
 <style lang="scss">
+  .simple-bar-custom {
+    height: 600px;
+  }
+
+  .game-list__items-games {
+    height: 600px;
+    overflow: hidden;
+  }
+
+  .game-list__items-games_mobile {
+    height: 350px;
+  }
+
+  .simple-bar-custom-mobile {
+    height: 350px;
+  }
+
 
 </style>

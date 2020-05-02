@@ -13,12 +13,7 @@
       <div class="statistic__last-games">
         <div class="last-games">
           <div class="last-game">
-            <span class="opponent__username">User1</span>
-            <span class="opponent__fraction">[Nilfgaard]</span>
-            : <span class="opponent__status status_fail">fail</span>
-            - <span class="user__username">{{ user.login }}</span>
-            <span class="user__fraction">[Skellige]</span>
-            : <span class="user__status  status_win">win</span>
+           <last-game v-for="i in 5" :key="i"/>
           </div>
         </div>
       </div>
@@ -27,7 +22,10 @@
 </template>
 
 <script>
+  import LastGame from "./LastGame";
+
   export default {
+    components: { LastGame },
     async serverPrefetch() {
       await this.$store.dispatch('user/fetchStats');
     },
@@ -44,9 +42,6 @@
       },
       winsPercent() {
         return this.stats.count_won_games / this.stats.count_games * 100;
-      },
-      user: function () {
-        return this.$store.state.user.data;
       }
     }
   }
@@ -91,38 +86,4 @@
     text-align: center;
   }
 
-  .last-game {
-    display: table-row;
-    color: #4f3832;
-  }
-
-  .opponent__username,
-  .opponent__fraction,
-  .opponent__status,
-  .user__username,
-  .user__fraction,
-  .user__status,
-  .game-date,
-  .game-time {
-    display: table-cell;
-    padding: 5px;
-  }
-
-  .opponent__username,
-  .user__username {
-    color: #c6c6c6;
-  }
-
-  .status_win {
-    color: #3e9c47;
-  }
-
-  .status_fail {
-    color: #830000;
-  }
-
-  .user__fraction,
-  .opponent__fraction {
-    color: #91824a;
-  }
 </style>

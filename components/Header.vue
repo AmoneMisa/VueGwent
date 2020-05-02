@@ -44,7 +44,7 @@
     },
     methods: {
       logout: async function () {
-        await this.$axios.$post('/api/logout/');
+        await this.$axios.$post('/api/user/logout/');
         await this.$store.dispatch('user/logout');
         this.$nuxt.context.redirect('/');
       }
