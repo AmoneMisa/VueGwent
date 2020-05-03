@@ -20,7 +20,7 @@
 </script>
 
 <style lang="scss">
-  @import "~/assets/_variables";
+  @import "assets/variables";
 
   .cards-list {
     display: flex;

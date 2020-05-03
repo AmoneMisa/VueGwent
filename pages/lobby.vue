@@ -5,10 +5,10 @@
     </media>
     <div class="lobby__wrapper">
       <media :query="{minWidth: 971}">
-        <user-place/>
+        <user-place :user="getUser"/>
       </media>
       <media :query="{maxWidth: 970}">
-        <user-place-mobile/>
+        <user-place-mobile :user="getUser"/>
       </media>
       <div class="lobby__main-content-game">
         <div class="main-content-game">
@@ -28,8 +28,8 @@
             </media>
           </div>
           <div class="main-content-game__current-game-list main-content-game__game-list">
-            <game-list v-if="currentGameList === 'games'"/>
-            <current-game-list v-if="currentGameList === 'current-games'"/>
+            <game-list v-if="currentGameList === 'games'" :user="getUser"/>
+            <current-game-list v-if="currentGameList === 'current-games'" :user="getUser"/>
           </div>
         </div>
       </div>
@@ -68,11 +68,17 @@
       return {
         currentGameList: 'games'
       }
+    },
+    computed: {
+      getUser() {
+        return this.$store.state.user.data;
+      }
     }
   }
 </script>
 
 <style lang="scss">
+  @import "assets/variables";
 
   .lobby {
     position: relative;
@@ -128,11 +134,6 @@
     &:hover {
       box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6) inset;
     }
-  }
-
-  .game-list__items-games {
-    height: calc(100vh / 4);
-    padding-right: 20px;
   }
 
   @media (max-width: 970px) {

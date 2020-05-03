@@ -173,7 +173,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import "assets/variables";
 
   .statistic__item {

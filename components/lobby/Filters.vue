@@ -1,7 +1,7 @@
 <template>
   <div class="game-list__filters">
     <div class="game-list__filter">
-      <label for="game-name">Название игры:
+      <label for="game-name">Поиск:
         <input class="game-list__field" id="game-name" v-model="gameName">
       </label>
     </div>

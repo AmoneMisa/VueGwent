@@ -1,0 +1,180 @@
+@import "/variables";
+
+.lobby__user-place {
+  border: 1px solid #0c0c0c;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.lobby__user-place_mobile {
+  padding: 5px;
+  margin-top: 30px;
+}
+
+.user-place {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-place__avatar {
+  flex: none;
+  border: 1px solid;
+  border-image: linear-gradient(
+      to bottom, rgba(47, 37, 23, 0.1),
+      #574c27,
+      rgba(47, 37, 23, 0.1)) 1 100%;;
+  margin-right: 20px;
+}
+
+.user-place__avatar-img {
+  width: 100px;
+  height: 100px;
+}
+
+
+.user-place__avatar-img_mobile {
+  width: 80px;
+  height: 80px;
+}
+
+.user-place__img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.user-place__avatar-text {
+  width: 100px;
+  color: #b18b48;
+  font-size: 16px;
+  margin-top: 5px;
+  text-align: center;
+}
+.user-place__avatar-text_mobile {
+  width: 80px;
+}
+
+.user-place__info {
+  flex: auto;
+  margin-right: 20px;
+  border-right: 1px solid;
+  border-image: linear-gradient(
+      to bottom, rgba(47, 37, 23, 0.1),
+      #574c27,
+      rgba(47, 37, 23, 0.1)) 1 100%;
+  padding-right: 20px;
+}
+
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info_mobile {
+  flex-direction: column;
+}
+
+.info__title {
+  color: #c6c6c6;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.info__title_mobile {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.info__item {
+  margin-bottom: 5px;
+  flex: none;
+}
+
+.personal-rate__item {
+  font-size: 14px;
+  color: #716556;
+}
+
+.personal-rate__weekly,
+.personal-rate__top {
+  color: #c6c6c6;
+  font-size: 16px;
+}
+
+.info__art {
+  height: 150px;
+  width: 300px;
+  margin: 0 10px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.info__art-filter {
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.9) inset;
+  height: 150px;
+  width: 300px;
+  position: absolute;
+}
+
+.info__img {
+  width: 100%;
+  height: 100%;
+}
+
+.info__deck {
+  font-size: 14px;
+  color: #716556;
+}
+
+.info__deck-name {
+  color: #b0b0ae;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.user-place__buttons {
+  flex: none;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.user-place__buttons_mobile {
+  width: 200px;
+}
+
+.little-buttons {
+  display: flex;
+  width: 155px;
+  justify-content: space-between;
+}
+
+.little-buttons_mobile {
+  width: 100px;
+}
+
+.little-button__item {
+  margin-bottom: 5px;
+}
+
+.little-button__icon {
+  color: #b18b48;
+  font-size: 24px;
+  height: 100%;
+  width: 100%;
+}
+
+.button__description {
+  font-size: 16px;
+  text-align: center;
+  color: #716556;
+}
+
+.button__description_mobile {
+  font-size: 14px;
+}

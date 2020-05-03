@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import NavigationMenu from "~/components/personal-area/navigationMenu";
+  import NavigationMenu from "~/components/personal-area/NavigationMenu";
   import UserStatisticFull from "~/components/personal-area/UserStatisticFull";
   import UserInfo from "~/components/personal-area/UserInfo";
 

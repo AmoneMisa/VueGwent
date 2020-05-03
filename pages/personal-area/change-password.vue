@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import NavigationMenu from "~/components/personal-area/navigationMenu";
+  import NavigationMenu from "~/components/personal-area/NavigationMenu";
   import UserChangePassword from "~/components/personal-area/UserChangePassword";
   import UserInfo from "~/components/personal-area/UserInfo";
 

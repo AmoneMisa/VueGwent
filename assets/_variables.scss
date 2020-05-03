@@ -9,6 +9,7 @@ $greenText : #406139;
 $title : #e6e6e6;
 $subTitle : #b0b0ae;
 $additionalText : #4f3832;
+$specialGreen: #3e9c47;
 
 ////////////////Icons/////////////////////
 $greenIcon : #38ab46;
@@ -33,6 +34,7 @@ $customBorder : linear-gradient(
 $customShadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset;
 $shadowHover : #feaf5c;
 $shadowHoverButton: $customShadow, 0 0 15px 5px rgba($shadowHover, 0.6);
+$shadowHoverAvatar: $customShadow, 0 0 5px 2px rgba($shadowHover, 0.3);
 
 ////////////////////Buttons///////////////////
 

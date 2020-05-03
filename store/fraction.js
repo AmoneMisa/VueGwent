@@ -5,6 +5,10 @@ export const state = () => ({
   cards: {}
 });
 
+export const getters = {
+  getByCode: (state) => (code) => state.list.find(fraction => fraction.code === code)
+};
+
 export const mutations = {
   set(state, list) {
     state.list = list;

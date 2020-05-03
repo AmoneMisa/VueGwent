@@ -1,0 +1,201 @@
+@import "variables";
+
+.lobby__chat {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.lobby__chat_mobile {
+  margin-bottom: 10px;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-header__chat-title {
+  color: $buttonTextHover;
+  background-color: rgba(#262020, 1);
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  box-shadow: $customShadow;
+  border: 1px solid $button;
+}
+
+.chat-header__chat-title_mobile {
+  height: 30px;
+  width: 120px;
+  font-size: 16px;
+}
+
+.chat-header__online-stats {
+  width: 250px;
+  background-color: transparent;
+  color: $defaultTextMoreIntensive;
+}
+
+.chat-header__online-stats_mobile {
+  width: 180px;
+  color: $defaultTextMoreIntensive;
+  font-size: 14px;
+}
+
+.online-stats {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.online-stats__games {
+  margin-right: 20px;
+}
+
+.online-stats__games_mobile {
+  margin-right: 10px;
+}
+
+.chat {
+  border: 1px solid $borderDeck;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.chat_mobile {
+  padding: 5px;
+}
+
+.chat__messages {
+  height: 300px;
+}
+
+.chat__messages_mobile {
+  height: 80vh;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.message_mobile {
+  height: 30px;
+}
+
+.message__text {
+  font-size: 16px;
+}
+
+.message__text_mobile {
+  font-size: 14px;
+}
+
+.message__user-avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.message__user-avatar_mobile {
+  width: 30px;
+  height: 30px;
+}
+
+.message__user-avatar-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.message__username {
+  color: $buttonTextHover;
+  font-size: 16px;
+  margin-right: 5px;
+  max-width: 200px;
+}
+
+.message__username_mobile {
+  font-size: 14px;
+}
+
+.message__time_mobile {
+  font-size: 14px;
+}
+
+.chat__user-message {
+  display: flex;
+  align-items: center;
+}
+
+.message__time {
+  color: $additionalText;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.message__system-name {
+  color: $defaultTextMoreIntensive;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.message__system-name_mobile {
+  font-size: 16px;
+}
+
+.message__system-text {
+  color: $buttonTextHover;
+  font-size: 18px;
+}
+
+.message__system-text_mobile {
+  font-size: 16px;
+}
+
+.message__admin-username {
+  color: $specialGreen;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.message__admin-username_mobile {
+  font-size: 14px;
+}
+
+.chat__user-message {
+  margin-top: 10px;
+}
+
+.chat__user-message-field {
+  color: $buttonTextHover;
+  background-color: $buttonDark;
+  border-radius: 5px;
+  box-shadow: $customShadow;
+  cursor: pointer;
+  border: 1px solid #1d1d18;
+  padding: 10px 20px;
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+}
+
+.chat__user-message-field_mobile {
+  padding: 5px 10px;
+}
+
+.simple-bar-chat {
+  height: 300px;
+  position: relative;
+}
+
+.simple-bar-chat_mobile {
+  height: 80vh;
+}

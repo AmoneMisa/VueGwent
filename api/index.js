@@ -153,4 +153,32 @@ router.post('/user/logout/', async (req, res) => {
   }
 });
 
+router.put('/user/start-game/', async (req, res) => {
+  try {
+    res.sendStatus(200);
+  } catch (e) {
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
+router.get('/user/game-session/', async (req, res) => {
+  try {
+    res.json([{
+      title: 'Название игры',
+      player1: {
+        userName: 'Игрок 1',
+        fractionCode: 'monsters',
+        userAvatar: null
+      },
+      player2: {
+        userName: 'Игрок 2',
+        fractionCode: 'skellige',
+        userAvatar: null
+      }
+    }]);
+  } catch (e) {
+    res.status(e.response.status).json(e.response.data);
+  }
+});
+
 export default router;

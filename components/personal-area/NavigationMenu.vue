@@ -40,7 +40,7 @@
 
 
 <style lang="scss">
-  @import "~/assets/_variables";
+  @import "assets/variables";
 
   .navigation-menu {
     flex: none;

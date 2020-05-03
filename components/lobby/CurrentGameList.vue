@@ -2,20 +2,20 @@
   <div class="game-list">
     <media :query="{minWidth: 971}">
       <div class="media-wrapper">
-    <filters/>
-    <div class="game-list__items-games">
-      <simplebar data-simplebar-auto-hide="false" class="simple-bar-custom">
-        <items-games button_text="Смотреть" v-for="i in 10" :key="i = 0"/>
-      </simplebar>
-    </div>
+        <filters/>
+        <div class="game-list__game-sessions">
+          <simplebar data-simplebar-auto-hide="false" class="simple-bar-custom">
+            <game-session button_text="Смотреть" v-for="(gameSession, i) in gameSessions" :key="i" :game-session="gameSession"/>
+          </simplebar>
+        </div>
       </div>
     </media>
     <media :query="{maxWidth: 970}">
       <div class="media-wrapper">
-        <filters-mobile />
-        <div class="game-list__items-games game-list__items-games_mobile">
+        <filters-mobile/>
+        <div class="game-list__game-sessions game-list__items-games_mobile">
           <simplebar data-simplebar-auto-hide="false" class="simple-bar-custom-mobile">
-            <items-games-mobile button_text="Смотреть" v-for="i in 10" :key="i = 0" />
+            <game-session-mobile button_text="Смотреть" v-for="(gameSession, i) in gameSessions" :key="i" :game-session="gameSession"/>
           </simplebar>
         </div>
       </div>
@@ -26,15 +26,34 @@
 <script>
   import Filters from "./Filters";
   import Simplebar from 'simplebar-vue';
-  import ItemsGames from "./ItemsGames";
-  import ItemsGamesMobile from "~/components/lobby-mobile/ItemsGames";
+  import GameSession from "./GameSession";
+  import GameSessionMobile from "~/components/lobby-mobile/GameSession";
   import FiltersMobile from "~/components/lobby-mobile/Filters";
 
   import Media from "vue-media";
 
   export default {
-    props: ['currentGameList'],
-    components: {Filters, Simplebar, ItemsGames, ItemsGamesMobile, Media, FiltersMobile}
+    props: ['currentGameList', 'user'],
+    components: {Filters, Simplebar, GameSession, GameSessionMobile, Media, FiltersMobile},
+    async serverPrefetch() {
+      await Promise.all([
+        this.$store.dispatch('lobby/fetchGameSessions')
+      ]);
+    },
+    async mounted() {
+      if (this.gameSessions) {
+        return;
+      }
+
+      await Promise.all([
+        this.$store.dispatch('lobby/fetchGameSessions')
+      ]);
+    },
+    computed: {
+      gameSessions() {
+       return this.$store.state.lobby.gameSessions;
+      }
+    }
   }
 </script>
 
@@ -43,7 +62,7 @@
     height: 600px;
   }
 
-  .game-list__items-games {
+  .game-list__game-sessions {
     height: 600px;
     overflow: hidden;
   }
