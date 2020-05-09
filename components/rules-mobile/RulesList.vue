@@ -2,7 +2,7 @@
   <div class="rules">
     <div class="rules__rule-fractions">
       <div class="rule-fractions">
-        <fractions-list/>
+        <fractions-list :mobile="true"/>
       </div>
     </div>
     <div class="rules__rule-base">
@@ -344,37 +344,5 @@
 </script>
 
 <style lang="scss">
-  @import "assets/variables";
 
-  .rules__title {
-    color: $defaultText;
-    font-size: 24px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  .rule-icons {
-    display: flex;
-    justify-content: center;
-  }
-
-  .rule-icon {
-    width: 70px;
-    height: 70px;
-    opacity: 0.7;
-  }
-
-  .rule-icon_mobile {
-    width: 50px;
-    height: 50px;
-  }
-
-  .rule-icon_current {
-    opacity: 1;
-  }
-
-  .rule-icon__img {
-    height: 100%;
-    width: 100%;
-  }
 </style>

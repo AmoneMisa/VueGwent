@@ -2,6 +2,7 @@
   <div class="rules">
     <div class="rules__rule-fractions">
       <div class="rule-fractions">
+        <div class="rule-fractions__title rules__title">Краткое описание фракций</div>
         <fractions-list/>
       </div>
     </div>
@@ -12,22 +13,19 @@
           <div class="rule-base__rule-icons">
             <div class="rule-icons">
               <div class="rule-icon" @click="ruleBaseId = '0'" :class="{'rule-icon_current': ruleBaseId === '0'}">
-                <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
+                <img src="/rules/types/Воин.png" alt="Cила" class="rule-icon__img">
               </div>
               <div class="rule-icon" @click="ruleBaseId = '1'" :class="{'rule-icon_current': ruleBaseId === '1'}">
-                <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
+                <img src="/rules/types/Воин.png" alt="Обычная карта" class="rule-icon__img">
               </div>
               <div class="rule-icon" @click="ruleBaseId = '2'" :class="{'rule-icon_current': ruleBaseId === '2'}">
-                <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
+                <img src="/rules/types/Воин.png" alt="Герой" class="rule-icon__img">
               </div>
               <div class="rule-icon" @click="ruleBaseId = '3'" :class="{'rule-icon_current': ruleBaseId === '3'}">
-                <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
+                <img src="/rules/types/Воин.png" alt="Погодная карта" class="rule-icon__img">
               </div>
               <div class="rule-icon" @click="ruleBaseId = '4'" :class="{'rule-icon_current': ruleBaseId === '4'}">
-                <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
-              </div>
-              <div class="rule-icon" @click="ruleBaseId = '5'" :class="{'rule-icon_current': ruleBaseId === '5'}">
-                <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
+                <img src="/rules/types/Воин.png" alt="Специальная карта" class="rule-icon__img">
               </div>
             </div>
           </div>
@@ -320,15 +318,26 @@
 </script>
 
 <style lang="scss">
+  @import "assets/variables";
+
+  .rules__title {
+    color: $defaultText;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
   .rule-icons {
     display: flex;
     margin-bottom: 10px;
+    justify-content: center;
   }
 
   .rule-icon {
     width: 70px;
     height: 70px;
     opacity: 0.7;
+    cursor: pointer;
   }
 
   .rule-icon_mobile {
@@ -350,6 +359,10 @@
   }
 
   .rules__rule-base {
+    margin-bottom: 60px;
+  }
+
+  .rule-fractions {
     margin-bottom: 60px;
   }
 

@@ -17,7 +17,7 @@
   .rule-item__title {
     color: $defaultTextMoreIntensive;
     font-size: 24px;
-    margin: 10px 0;
+    margin: 15px 0 10px 0;
     text-align: center;
   }
 
