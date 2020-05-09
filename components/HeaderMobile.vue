@@ -16,7 +16,9 @@
             <div class="menu__item_mobile">
               <nuxt-link to="/game-field/">Игра</nuxt-link>
             </div>
-            <div class="menu__item_mobile"><a href="#">Правила игры</a></div>
+            <div class="menu__item_mobile">
+              <nuxt-link to="/rules/">Правила игры</nuxt-link>
+            </div>
             <div class="menu__item_mobile"><a href="#">Связь с нами</a></div>
           </div>
         </div>

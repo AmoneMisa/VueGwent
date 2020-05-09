@@ -52,13 +52,13 @@
   }
 </script>
 <style lang="scss">
-  @import "~/assets/fontawesome/scss/fontawesome";
-  @import "~/assets/fontawesome/scss/regular";
-  @import "~/assets/fontawesome/scss/solid";
-  @import "~/assets/fontawesome/scss/light";
-  @import "~/assets/fontawesome/scss/brands";
+  @import "assets/fontawesome/scss/fontawesome";
+  @import "assets/fontawesome/scss/regular";
+  @import "assets/fontawesome/scss/solid";
+  @import "assets/fontawesome/scss/light";
+  @import "assets/fontawesome/scss/brands";
 
-  @import "~/assets/_variables";
+  @import "assets/_variables";
 
   @import "simplebar/dist/simplebar.min.css";
 
@@ -84,6 +84,7 @@
 
   button, input, textarea {
     outline: none;
+    font-family: Tahoma, Arial, sans-serif;
   }
 
   button, input {

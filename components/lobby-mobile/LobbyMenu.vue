@@ -30,11 +30,8 @@
 
 
 .lobby-menu {
-  position: absolute;
-  left: 0;
-  top: -40px;
-  display: flex;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 </style>

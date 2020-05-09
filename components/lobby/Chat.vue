@@ -43,7 +43,7 @@
           </div>
         </simplebar>
       </div>
-      <div class="chat__user-message">
+      <div class="chat__user-message" v-if="user">
         <input name="message" class="chat__user-message-field" maxlength="144" autocomplete="off">
       </div>
     </div>
@@ -56,6 +56,11 @@
   export default {
     components: {
       Simplebar
+    },
+    computed: {
+      user() {
+        return this.$store.state.user.data;
+      }
     }
   }
 </script>

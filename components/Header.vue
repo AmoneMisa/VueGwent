@@ -9,7 +9,7 @@
           <div class="menu__item"><nuxt-link to="/deck/">Колоды</nuxt-link></div>
           <div class="menu__item"><nuxt-link to="/lobby/">Лобби</nuxt-link></div>
           <div class="menu__item"><nuxt-link to="/game-field/">Игра</nuxt-link></div>
-          <div class="menu__item"><a href="#">Правила игры</a></div>
+          <div class="menu__item"><nuxt-link to="/rules/">Правила игры</nuxt-link></div>
           <div class="menu__item"><a href="#">Связь с нами</a></div>
         </div>
       </div>

@@ -1,15 +1,23 @@
 <template>
   <div class="lobby">
-    <media :query="{maxWidth: 970}">
-      <lobby-menu-mobile/>
-    </media>
     <div class="lobby__wrapper">
-      <media :query="{minWidth: 971}">
-        <user-place :user="getUser"/>
-      </media>
-      <media :query="{maxWidth: 970}">
-        <user-place-mobile :user="getUser"/>
-      </media>
+      <div class="lobby__user-place-wrapper" v-if="user">
+        <media :query="{minWidth: 971}">
+          <user-place :user="user"/>
+        </media>
+        <media :query="{maxWidth: 970}">
+          <user-place-mobile :user="user"/>
+        </media>
+      </div>
+      <div class="lobby__user-place" v-else>
+        <div class="user-place_unlogin">
+          <span class="user-place__text_unlogin">Пожалуйста,
+            <nuxt-link to="/"> авторизируйтесь</nuxt-link>,
+            чтобы иметь возможность играть и общаться в чате.
+            Без авторизации Вы можете просматривать текущие игры,
+            читать чат, просматривать магазин.</span>
+        </div>
+      </div>
       <div class="lobby__main-content-game">
         <div class="main-content-game">
           <div class="main-content-game__actions">
@@ -26,10 +34,13 @@
             <media :query="{minWidth: 971}">
               <lobby-menu/>
             </media>
+            <media :query="{maxWidth: 970}">
+              <lobby-menu-mobile/>
+            </media>
           </div>
           <div class="main-content-game__current-game-list main-content-game__game-list">
-            <game-list v-if="currentGameList === 'games'" :user="getUser"/>
-            <current-game-list v-if="currentGameList === 'current-games'" :user="getUser"/>
+            <game-list v-if="currentGameList === 'games'" :user="user"/>
+            <current-game-list v-if="currentGameList === 'current-games'" :user="user"/>
           </div>
         </div>
       </div>
@@ -70,7 +81,7 @@
       }
     },
     computed: {
-      getUser() {
+      user() {
         return this.$store.state.user.data;
       }
     }
@@ -84,9 +95,16 @@
     position: relative;
   }
 
-  input, button, textarea {
-    outline: none;
-    font-family: Tahoma, Arial, sans-serif;
+  .user-place_unlogin {
+      text-align: center;
+    padding: 20px 0;
+  }
+
+  .user-place__text_unlogin {
+    color: $defaultText;
+    a {
+      color: $title;
+    }
   }
 
   .lobby__main-content-game {

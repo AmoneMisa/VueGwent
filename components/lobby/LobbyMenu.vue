@@ -27,6 +27,7 @@
 </script>
 
 <style lang="scss">
+  @import "assets/variables";
 
   .lobby-menu {
     border-radius: 5px;
@@ -35,5 +36,10 @@
 
   .lobby-menu__item {
     margin-left: 5px;
+
+    a {
+      color: $buttonText;
+    }
+
   }
 </style>

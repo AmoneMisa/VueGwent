@@ -31,23 +31,6 @@
 </script>
 
 <style lang="scss">
+@import "assets/lobbyFilters";
 
-  .game-list__filters {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 15px auto 20px;
-    color: #b18b48;
-    font-size: 16px;
-  }
-
-  .game-list__field {
-    width: 200px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-left: 10px;
-    background-color: rgba(#262020, 0.5);
-    border: 1px solid rgba(#262020, 0.5);
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.6) inset;
-    color: #a5a195;
-  }
 </style>

@@ -1,7 +1,7 @@
 @import "/variables";
 
 .lobby__user-place {
-  border: 1px solid #0c0c0c;
+  border: 1px solid $borderDeck;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 40px;
@@ -21,10 +21,7 @@
 .user-place__avatar {
   flex: none;
   border: 1px solid;
-  border-image: linear-gradient(
-      to bottom, rgba(47, 37, 23, 0.1),
-      #574c27,
-      rgba(47, 37, 23, 0.1)) 1 100%;;
+  border-image: $customBorder;
   margin-right: 20px;
 }
 
@@ -46,7 +43,7 @@
 
 .user-place__avatar-text {
   width: 100px;
-  color: #b18b48;
+  color: $defaultTextMoreIntensive;
   font-size: 16px;
   margin-top: 5px;
   text-align: center;
@@ -59,10 +56,7 @@
   flex: auto;
   margin-right: 20px;
   border-right: 1px solid;
-  border-image: linear-gradient(
-      to bottom, rgba(47, 37, 23, 0.1),
-      #574c27,
-      rgba(47, 37, 23, 0.1)) 1 100%;
+  border-image: $customBorder;
   padding-right: 20px;
 }
 
@@ -78,7 +72,7 @@
 }
 
 .info__title {
-  color: #c6c6c6;
+  color: $buttonTextHover;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -95,12 +89,12 @@
 
 .personal-rate__item {
   font-size: 14px;
-  color: #716556;
+  color: $defaultText;
 }
 
 .personal-rate__weekly,
 .personal-rate__top {
-  color: #c6c6c6;
+  color: $buttonTextHover;
   font-size: 16px;
 }
 
@@ -113,7 +107,7 @@
 }
 
 .info__art-filter {
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.9) inset;
+  box-shadow: $customShadowBig;
   height: 150px;
   width: 300px;
   position: absolute;
@@ -126,11 +120,11 @@
 
 .info__deck {
   font-size: 14px;
-  color: #716556;
+  color: $defaultText;
 }
 
 .info__deck-name {
-  color: #b0b0ae;
+  color: $subTitle;
   margin-top: 5px;
   font-size: 16px;
 }
@@ -163,7 +157,7 @@
 }
 
 .little-button__icon {
-  color: #b18b48;
+  color: $defaultTextMoreIntensive;
   font-size: 24px;
   height: 100%;
   width: 100%;
@@ -172,7 +166,7 @@
 .button__description {
   font-size: 16px;
   text-align: center;
-  color: #716556;
+  color: $defaultText;
 }
 
 .button__description_mobile {

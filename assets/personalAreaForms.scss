@@ -1,10 +1,12 @@
+@import "/variables";
+
 .user-form-block {
   display: flex;
   flex-direction: column;
 }
 
 .user-form-block__title {
-  color: #c6c6c6;
+  color: $buttonTextHover;
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;

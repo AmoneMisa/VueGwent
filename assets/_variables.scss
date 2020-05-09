@@ -32,6 +32,7 @@ $customBorder : linear-gradient(
 /////////////////Shadow//////////////
 
 $customShadow: 0 0 1px 1px rgba(0, 0, 0, .9) inset;
+$customShadowBig: 0 0 10px 10px rgba(0, 0, 0, .9) inset;
 $shadowHover : #feaf5c;
 $shadowHoverButton: $customShadow, 0 0 15px 5px rgba($shadowHover, 0.6);
 $shadowHoverAvatar: $customShadow, 0 0 5px 2px rgba($shadowHover, 0.3);
@@ -42,5 +43,6 @@ $scale : #655940;
 $button : #1d1d18;
 $buttonText : #a5a195;
 $buttonDark : #262020;
+$buttonDarkDisabled: rgba(#262020, 0.5);
 $buttonDarkText : #98937f;
 $buttonTextHover : #c6c6c6;
