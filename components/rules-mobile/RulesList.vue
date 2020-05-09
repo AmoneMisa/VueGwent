@@ -7,31 +7,31 @@
     </div>
     <div class="rules__rule-base">
       <div class="rule-base">
-        <div class="rule-base__title rules__title">Основные элементы игры</div>
+        <div class="rule-base__title rules__title">Основные правила игры</div>
         <div class="rule-base__list">
           <div class="rule-base__rule-icons">
             <div class="rule-icons">
-              <div class="rule-icon" @click="ruleBaseId = '0'" :class="{'rule-icon_current': ruleBaseId === '0'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleBaseId = '0'" :class="{'rule-icon_current': ruleBaseId === '0'}">
                 <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleBaseId = '1'" :class="{'rule-icon_current': ruleBaseId === '1'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleBaseId = '1'" :class="{'rule-icon_current': ruleBaseId === '1'}">
                 <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleBaseId = '2'" :class="{'rule-icon_current': ruleBaseId === '2'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleBaseId = '2'" :class="{'rule-icon_current': ruleBaseId === '2'}">
                 <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleBaseId = '3'" :class="{'rule-icon_current': ruleBaseId === '3'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleBaseId = '3'" :class="{'rule-icon_current': ruleBaseId === '3'}">
                 <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleBaseId = '4'" :class="{'rule-icon_current': ruleBaseId === '4'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleBaseId = '4'" :class="{'rule-icon_current': ruleBaseId === '4'}">
                 <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleBaseId = '5'" :class="{'rule-icon_current': ruleBaseId === '5'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleBaseId = '5'" :class="{'rule-icon_current': ruleBaseId === '5'}">
                 <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
               </div>
             </div>
           </div>
-          <rule-item :rule_description="ruleBase.description" :rule_title="ruleBase.title"/>
+          <rule-item :rule_description="ruleBase.description" :rule_title="ruleBase.title" :mobile="true"/>
         </div>
       </div>
     </div>
@@ -41,49 +41,62 @@
         <div class="rule-types__list">
           <div class="rule-types__rule-icons">
             <div class="rule-icons">
-              <div class="rule-icon" @click="ruleTypeId = '0'" :class="{'rule-icon_current': ruleTypeId === '0'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '0'"
+                   :class="{'rule-icon_current': ruleTypeId === '0'}">
                 <img src="/rules/types/Воин.png" alt="Воин" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '1'" :class="{'rule-icon_current': ruleTypeId === '1'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '1'"
+                   :class="{'rule-icon_current': ruleTypeId === '1'}">
                 <img src="/rules/types/Дальнобойный%20отряд.png" alt="Дальнобойный отряд" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '2'" :class="{'rule-icon_current': ruleTypeId === '2'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '2'"
+                   :class="{'rule-icon_current': ruleTypeId === '2'}">
                 <img src="/rules/types/Осадный%20отряд.png" alt="Осадный отряд" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '3'" :class="{'rule-icon_current': ruleTypeId === '3'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '3'"
+                   :class="{'rule-icon_current': ruleTypeId === '3'}">
                 <img src="/rules/types/Проворный%20отряд.png" alt="Проворный отряд" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '4'" :class="{'rule-icon_current': ruleTypeId === '4'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '4'"
+                   :class="{'rule-icon_current': ruleTypeId === '4'}">
                 <img src="/rules/types/Командирский%20Рог%20Поддержка.png" alt="Командирский рог"
                      class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '5'" :class="{'rule-icon_current': ruleTypeId === '5'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '5'"
+                   :class="{'rule-icon_current': ruleTypeId === '5'}">
                 <img src="/rules/types/Мороз.png" alt="Мороз" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '6'" :class="{'rule-icon_current': ruleTypeId === '6'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '6'"
+                   :class="{'rule-icon_current': ruleTypeId === '6'}">
                 <img src="/rules/types/Туман.png" alt="Туман" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '7'" :class="{'rule-icon_current': ruleTypeId === '7'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '7'"
+                   :class="{'rule-icon_current': ruleTypeId === '7'}">
                 <img src="/rules/types/Ливень.png" alt="Ливень" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '8'" :class="{'rule-icon_current': ruleTypeId === '8'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '8'"
+                   :class="{'rule-icon_current': ruleTypeId === '8'}">
                 <img src="/rules/types/Шторм%20со%20Скеллиге.png" alt="Шторм со Скеллиге" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '9'" :class="{'rule-icon_current': ruleTypeId === '9'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '9'"
+                   :class="{'rule-icon_current': ruleTypeId === '9'}">
                 <img src="/rules/types/Ясное%20Небо.png" alt="Ясное Небо" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '10'" :class="{'rule-icon_current': ruleTypeId === '10'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '10'"
+                   :class="{'rule-icon_current': ruleTypeId === '10'}">
                 <img src="/rules/types/Чучело.png" alt="Чучело" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '11'" :class="{'rule-icon_current': ruleTypeId === '11'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '11'"
+                   :class="{'rule-icon_current': ruleTypeId === '11'}">
                 <img src="/rules/types/Казнь%20Поддержка.png" alt="Казнь" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleTypeId = '12'" :class="{'rule-icon_current': ruleTypeId === '12'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleTypeId = '12'"
+                   :class="{'rule-icon_current': ruleTypeId === '12'}">
                 <img src="/rules/types/Мардрём.png" alt="Мардрём" class="rule-icon__img">
               </div>
             </div>
           </div>
-          <rule-item :rule_description="ruleType.description" :rule_title="ruleType.title"/>
+          <rule-item :rule_description="ruleType.description" :rule_title="ruleType.title" :mobile="true"/>
         </div>
       </div>
     </div>
@@ -93,42 +106,53 @@
         <div class="rule-skills__list">
           <div class="rule-skills__rule-icons">
             <div class="rule-icons">
-              <div class="rule-icon" @click="ruleSkillId = '0'" :class="{'rule-icon_current': ruleSkillId === '0'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '0'"
+                   :class="{'rule-icon_current': ruleSkillId === '0'}">
                 <img src="/rules/skills/Казнь.png" alt="Казнь" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleSkillId = '1'" :class="{'rule-icon_current': ruleSkillId === '1'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '1'"
+                   :class="{'rule-icon_current': ruleSkillId === '1'}">
                 <img src="/rules/skills/Командирский%20рог.png" alt="Командирский рог" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleSkillId = '2'" :class="{'rule-icon_current': ruleSkillId === '2'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '2'"
+                   :class="{'rule-icon_current': ruleSkillId === '2'}">
                 <img src="/rules/skills/Лекарь.png" alt="Медик" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleSkillId = '3'" :class="{'rule-icon_current': ruleSkillId === '3'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '3'"
+                   :class="{'rule-icon_current': ruleSkillId === '3'}">
                 <img src="/rules/skills/Лидерство.png" alt="Прилив сил" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleSkillId = '4'" :class="{'rule-icon_current': ruleSkillId === '4'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '4'"
+                   :class="{'rule-icon_current': ruleSkillId === '4'}">
                 <img src="/rules/skills/Плотный%20строй.png" alt="Прочная связь" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleSkillId = '5'" :class="{'rule-icon_current': ruleSkillId === '5'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '5'"
+                   :class="{'rule-icon_current': ruleSkillId === '5'}">
                 <img src="/rules/skills/Проворность.png" alt="Проворство" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleSkillId = '6'" :class="{'rule-icon_current': ruleSkillId === '6'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '6'"
+                   :class="{'rule-icon_current': ruleSkillId === '6'}">
                 <img src="/rules/skills/Соратники.png" alt="Двойник" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleSkillId = '7'" :class="{'rule-icon_current': ruleSkillId === '7'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '7'"
+                   :class="{'rule-icon_current': ruleSkillId === '7'}">
                 <img src="/rules/skills/Шпион.png" alt="Шпион" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleSkillId = '8'" :class="{'rule-icon_current': ruleSkillId === '8'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '8'"
+                   :class="{'rule-icon_current': ruleSkillId === '8'}">
                 <img src="/rules/skills/Мститель.png" alt="Мститель" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleSkillId = '9'" :class="{'rule-icon_current': ruleSkillId === '9'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '9'"
+                   :class="{'rule-icon_current': ruleSkillId === '9'}">
                 <img src="/rules/skills/Мардрём.png" alt="Мардрём" class="rule-icon__img">
               </div>
-              <div class="rule-icon" @click="ruleSkillId = '10'" :class="{'rule-icon_current': ruleSkillId === '10'}">
+              <div class="rule-icon rule-icon_mobile" @click="ruleSkillId = '10'"
+                   :class="{'rule-icon_current': ruleSkillId === '10'}">
                 <img src="/rules/skills/Берсерк.png" alt="Берсерк" class="rule-icon__img">
               </div>
             </div>
           </div>
-          <rule-item :rule_description="ruleSkill.description" :rule_title="ruleSkill.title"/>
+          <rule-item :rule_description="ruleSkill.description" :rule_title="ruleSkill.title" :mobile="true"/>
         </div>
       </div>
     </div>
@@ -136,8 +160,8 @@
 </template>
 
 <script>
-  import RuleItem from "./RuleItem";
-  import FractionsList from "./FractionsList";
+  import RuleItem from "~/components/rules/RuleItem";
+  import FractionsList from "~/components/rules/FractionsList";
 
 
   export default {
@@ -320,9 +344,18 @@
 </script>
 
 <style lang="scss">
+  @import "assets/variables";
+
+  .rules__title {
+    color: $defaultText;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
   .rule-icons {
     display: flex;
-    margin-bottom: 10px;
+    justify-content: center;
   }
 
   .rule-icon {
@@ -344,13 +377,4 @@
     height: 100%;
     width: 100%;
   }
-
-  .rules__rule-types {
-    margin-bottom: 60px;
-  }
-
-  .rules__rule-base {
-    margin-bottom: 60px;
-  }
-
 </style>
