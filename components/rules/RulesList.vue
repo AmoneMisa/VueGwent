@@ -6,33 +6,6 @@
         <fractions-list/>
       </div>
     </div>
-    <div class="rules__rule-base">
-      <div class="rule-base">
-        <div class="rule-base__title rules__title">Основные элементы игры</div>
-        <div class="rule-base__list">
-          <div class="rule-base__rule-icons">
-            <div class="rule-icons">
-              <div class="rule-icon" @click="ruleBaseId = '0'" :class="{'rule-icon_current': ruleBaseId === '0'}">
-                <img src="/rules/types/Воин.png" alt="Cила" class="rule-icon__img">
-              </div>
-              <div class="rule-icon" @click="ruleBaseId = '1'" :class="{'rule-icon_current': ruleBaseId === '1'}">
-                <img src="/rules/types/Воин.png" alt="Обычная карта" class="rule-icon__img">
-              </div>
-              <div class="rule-icon" @click="ruleBaseId = '2'" :class="{'rule-icon_current': ruleBaseId === '2'}">
-                <img src="/rules/types/Воин.png" alt="Герой" class="rule-icon__img">
-              </div>
-              <div class="rule-icon" @click="ruleBaseId = '3'" :class="{'rule-icon_current': ruleBaseId === '3'}">
-                <img src="/rules/types/Воин.png" alt="Погодная карта" class="rule-icon__img">
-              </div>
-              <div class="rule-icon" @click="ruleBaseId = '4'" :class="{'rule-icon_current': ruleBaseId === '4'}">
-                <img src="/rules/types/Воин.png" alt="Специальная карта" class="rule-icon__img">
-              </div>
-            </div>
-          </div>
-          <rule-item :rule_description="ruleBase.description" :rule_title="ruleBase.title"/>
-        </div>
-      </div>
-    </div>
     <div class="rules__rule-types">
       <div class="rule-types">
         <div class="rule-types__title rules__title">Типы карт</div>
@@ -144,7 +117,6 @@
       return {
         ruleTypeId: '0',
         ruleSkillId: '0',
-        ruleBaseId: '0',
         ruleTypes: [
           {
             id: '0',
@@ -268,38 +240,6 @@
             title: 'Берсерк',
             description: 'Под влиянием Мардрёма Берсерки превращаются в медведей.'
           }
-        ],
-        ruleBases: [
-          {
-            id: '0',
-            title: 'Сила',
-            description: 'Указывает количество очков силы карты.'
-          },
-          {
-            id: '1',
-            title: 'Карта Героя',
-            description: 'Особая карта, имеет иммунитет ко всем картам действий, включая Чучел и Медиков.'
-          },
-          {
-            id: '2',
-            title: 'Обычная Карта',
-            description: 'Обычная карта отряда. На неё влияют все возможные карты действий.'
-          },
-          {
-            id: '3',
-            title: 'Погодная Карта',
-            description: 'Погодные карты влияют на силу карт отрядов. Ясное Небо отменяет все негативные эффекты других погодных карт.'
-          },
-          {
-            id: '4',
-            title: 'Специальная Карта',
-            description: 'Специальные карты не являются картами отрядов. Они по-своему влияют на карты отрядов, в зависимости от своего навыка. Они не могут быть воскрешены медиками или Лидерами.'
-          },
-          {
-            id: '5',
-            title: 'Карта Лидера',
-            description: 'Карты лидеров являются уникальными для каждой колоды. Они имеют свои личные усиления или негативные эффекты, или нейтральные эффекты. Узнать о навыках каждого Лидера Вы можете во вкладке "Колода" => Лидер.'
-          }
         ]
       }
     },
@@ -309,9 +249,6 @@
       },
       ruleSkill() {
         return this.ruleSkills[this.ruleSkillId];
-      },
-      ruleBase() {
-        return this.ruleBases[this.ruleBaseId];
       }
     }
   }
