@@ -1,7 +1,7 @@
 <template>
   <div class="fraction-cards__filters filters">
-    <div class="filter" :class="{'filter_current' : false, 'filter_current' : currentFilter === 'filter-all'}"
-         @click="() => this.$emit('set-current-filter', 'filter-all')" >
+    <div class="filter" :class="{'filter_current' : false, 'filter_current' : currentFilter === 'ALL'}"
+         @click="() => this.$emit('set-current-filter', 'ALL')">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33pt" height="39pt"
            viewBox="0 0 33 39" version="1.1">
         <g>
@@ -16,8 +16,8 @@
         </g>
       </svg>
     </div>
-    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-warrior'}"
-         @click="() => this.$emit('set-current-filter', 'filter-warrior')">
+    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='MELEE'}"
+         @click="() => this.$emit('set-current-filter', 'MELEE')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
            style="height: 512px; width: 512px;">
         <path d="M0 0h512v512H0z" fill="#ff0000" fill-opacity="0"></path>
@@ -28,8 +28,8 @@
         </g>
       </svg>
     </div>
-    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-archer'}"
-         @click="() => this.$emit('set-current-filter','filter-archer')">
+    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='RANGED'}"
+         @click="() => this.$emit('set-current-filter','RANGED')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
            style="height: 512px; width: 512px;">
         <path d="M0 0h512v512H0z" fill="#ff0000" fill-opacity="0"></path>
@@ -40,8 +40,8 @@
         </g>
       </svg>
     </div>
-    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-siege'}"
-         @click="() => this.$emit('set-current-filter', 'filter-siege')">
+    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='SIEGE'}"
+         @click="() => this.$emit('set-current-filter', 'SIEGE')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
            style="height: 512px; width: 512px;">
         <path d="M0 0h512v512H0z" fill="#ff0000" fill-opacity="0"></path>
@@ -52,8 +52,8 @@
         </g>
       </svg>
     </div>
-    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-hero'}"
-         @click="() => this.$emit('set-current-filter', 'filter-hero')">
+    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='HERO'}"
+         @click="() => this.$emit('set-current-filter', 'HERO')">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40pt" height="40pt"
            viewBox="0 0 40 40" version="1.1">
         <g>
@@ -76,8 +76,8 @@
         </g>
       </svg>
     </div>
-    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-weather'}"
-         @click="() => this.$emit('set-current-filter', 'filter-weather')">
+    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='WEATHER'}"
+         @click="() => this.$emit('set-current-filter', 'WEATHER')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
            style="height: 512px; width: 512px;">
         <path d="M0 0h512v512H0z" fill="#ff0000" fill-opacity="0"></path>
@@ -88,8 +88,8 @@
         </g>
       </svg>
     </div>
-    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='filter-action'}"
-         @click="() => this.$emit('set-current-filter', 'filter-action')">
+    <div class="filter" :class="{filter_current : false, 'filter_current' : currentFilter ==='SPECIAL'}"
+         @click="() => this.$emit('set-current-filter', 'SPECIAL')">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
            style="height: 512px; width: 512px;">
         <path d="M0 0h512v512H0z" fill="#ff0000" fill-opacity="0"></path>
@@ -110,7 +110,7 @@
 </script>
 
 <style lang="scss">
-  @import "~/assets/_variables";
+  @import "assets/variables";
 
   .filters {
     display: flex;

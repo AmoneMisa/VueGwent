@@ -15,6 +15,9 @@ export const mutations = {
   },
   setCards(state, {fractionCode, cards}) {
     Vue.set(state.cards, fractionCode, cards);
+  },
+  setCurrentFilter(state, {filter}) {
+    state.currentFilter = filter;
   }
 };
 
@@ -27,8 +30,8 @@ export const actions = {
       commit('set', null);
     }
   },
-  async fetchCards({commit}, fractionCode) {
-    let cards = await this.$axios.$get('/api/fraction/' + fractionCode + '/card/');
+  async fetchCards({commit, state}, {fractionCode, filter}) {
+    let cards = await this.$axios.$get('/api/fraction/' + fractionCode + '/card/?filter=' + filter);
     commit('setCards', {fractionCode, cards});
   }
 };

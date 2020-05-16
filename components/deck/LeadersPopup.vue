@@ -36,7 +36,7 @@
 </script>
 
 <style lang="scss">
-  @import "~/assets/_variables";
+  @import "assets/variables";
 
   .leader__popup-container {
     position: absolute;

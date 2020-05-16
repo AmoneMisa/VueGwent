@@ -16,13 +16,13 @@
 
   export default {
     components: {CardsList, CardsListMobile, Media},
-    props: ['fraction'],
+    props: ['fraction', 'filter'],
     async serverPrefetch() {
       if (!this.fraction) {
         return;
       }
 
-      await this.$store.dispatch('fraction/fetchCards', this.fraction.code);
+      await this.$store.dispatch('fraction/fetchCards', {fractionCode: this.fraction.code, filter: this.filter});
     },
     async mounted() {
       if (!this.fraction) {
@@ -33,7 +33,7 @@
         return;
       }
 
-      await this.$store.dispatch('fraction/fetchCards', this.fraction.code);
+      await this.$store.dispatch('fraction/fetchCards', {fractionCode: this.fraction.code, filter: this.filter});
     },
     computed: {
       cards() {
@@ -46,7 +46,10 @@
     },
     watch: {
       async fraction(fraction) {
-        await this.$store.dispatch('fraction/fetchCards', fraction.code);
+        await this.$store.dispatch('fraction/fetchCards', {fractionCode: fraction.code, filter: this.filter});
+      },
+      async filter(filter) {
+        await this.$store.dispatch('fraction/fetchCards', {fractionCode: this.fraction.code, filter: filter});
       }
     }
   }

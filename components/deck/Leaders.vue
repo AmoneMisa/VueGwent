@@ -23,7 +23,7 @@
 </script>
 
 <style lang="scss">
-  @import "~/assets/_variables";
+  @import "assets/variables";
 
   .leader__title {
     color: #b18b48;

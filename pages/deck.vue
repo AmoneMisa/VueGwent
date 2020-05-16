@@ -33,8 +33,8 @@
           <media :query="{minWidth: 971}">
             <div class="cards-collection__cards">
               <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
-                <deck-available-cards :fraction="currentFraction" v-if="user"/>
-                <fraction-cards :fraction="currentFraction" v-else/>
+                <deck-available-cards :fraction="currentFraction" :filter="currentAvailableCardsFilter" v-if="user"/>
+                <fraction-cards :fraction="currentFraction" :filter="currentCardsFilter" v-else/>
               </simplebar>
             </div>
           </media>
@@ -71,8 +71,8 @@
         <div class="deck-page__deck-cards">
           <div class="cards-collection">
             <div class="cards-collection__title cards-collection__title-right" v-if="user">Карты колоды</div>
-            <div class="cards-collection__current-filter cards-collection__current-filter-right" v-if="user">{{
-              filtersTitles[currentCardsFilter] || 'Все карты' }}
+            <div class="cards-collection__current-filter cards-collection__current-filter-right" v-if="user">
+              {{ filtersTitles[currentCardsFilter] || 'Все карты' }}
             </div>
             <div class="cards-collection__filters">
               <filters :current-filter="currentCardsFilter"
@@ -81,7 +81,7 @@
             </div>
             <div class="cards-collection__cards">
               <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
-                <deck-cards :fraction="currentFraction" v-if="user"/>
+                <deck-cards :fraction="currentFraction" :filter="currentCardsFilter" v-if="user"/>
                 <div class="cards-collection__alt-title" v-else>
                   <nuxt-link class="cards-collection__alt-title-link" to="/">Войдите</nuxt-link>
                   , чтобы собрать колоду
@@ -93,7 +93,7 @@
       </media>
     </div>
     <media :query="{minWidth: 971}">
-    <action-buttons v-if="user"/>
+      <action-buttons v-if="user"/>
     </media>
     <media :query="{maxWidth: 970}">
       <action-buttons-mobile v-if="user"/>
@@ -122,16 +122,16 @@
     data() {
       return {
         currentFractionIndex: 0,
-        currentAvailableCardsFilter: null,
-        currentCardsFilter: null,
+        currentCardsFilter: 'ALL',
+        currentAvailableCardsFilter: 'ALL',
         filtersTitles: {
-          'filter-all': 'Все карты',
-          'filter-warrior': 'Рукопашные отряды',
-          'filter-archer': 'Дальнобойные отряды',
-          'filter-siege': 'Осадные отряды',
-          'filter-hero': 'Герои',
-          'filter-weather': 'Погодные карты',
-          'filter-action': 'Специальные карты',
+          'ALL': 'Все карты',
+          'MELEE': 'Рукопашные отряды',
+          'RANGED': 'Дальнобойные отряды',
+          'SIEGE': 'Осадные отряды',
+          'HERO': 'Герои',
+          'WEATHER': 'Погодные карты',
+          'SPECIAL': 'Специальные карты',
         },
         isActiveFiltersMenu: false,
         isCurrentDeckAvailable: true,
@@ -182,7 +182,7 @@
   };
 </script>
 <style lang="scss">
-  @import "~/assets/_variables";
+  @import "assets/variables";
 
   .deck-page__content {
     display: flex;

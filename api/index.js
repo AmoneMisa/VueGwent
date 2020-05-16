@@ -13,6 +13,7 @@ router.use((req, res, next) => {
 });
 
 router.use(express.json());
+router.use(express.query());
 router.use((req, res, next) => {
   req.apiClient = axios.create({
     baseURL: config.url.api,
@@ -64,7 +65,7 @@ router.get('/user/deck/:code/', async (req, res) => {
 
 router.get('/user/deck/:code/card/', async (req, res) => {
   try {
-    let resp = await req.apiClient.get('/user/deck/' + req.params.code + '/card/');
+    let resp = await req.apiClient.get('/user/deck/' + req.params.code + '/card/', {params: req.query});
     res.json(resp.data);
   } catch (e) {
     res.status(e.response.status).json(e.response.data);
@@ -91,7 +92,7 @@ router.delete('/user/deck/:code/card/:card_code/', async (req, res) => {
 
 router.get('/user/deck/:code/card/available/', async (req, res) => {
   try {
-    let resp = await req.apiClient.get('/user/deck/' + req.params.code + '/card/available/');
+    let resp = await req.apiClient.get('/user/deck/' + req.params.code + '/card/available/', {params: req.query});
     res.json(resp.data);
   } catch (e) {
     res.status(e.response.status).json(e.response.data);
@@ -109,7 +110,7 @@ router.get('/fraction/', async (req, res) => {
 
 router.get('/fraction/:code/card/', async (req, res) => {
   try {
-    let resp = await req.apiClient.get('/fraction/' + req.params.code + '/card/');
+    let resp = await req.apiClient.get('/fraction/' + req.params.code + '/card/', {params: req.query});
     res.json(resp.data);
   } catch (e) {
     res.status(e.response.status).json(e.response.data);

@@ -23,12 +23,12 @@ export const actions = {
     let info = await this.$axios.$get('/api/user/deck/' + fractionCode + '/');
     commit('setInfo', {fractionCode, info});
   },
-  async fetchCards({commit}, fractionCode) {
-    let cards = await this.$axios.$get('/api/user/deck/' + fractionCode + '/card/');
+  async fetchCards({commit}, {fractionCode, filter}) {
+    let cards = await this.$axios.$get('/api/user/deck/' + fractionCode + '/card/?filter=' + filter);
     commit('setCards', {fractionCode, cards});
   },
-  async fetchAvailableCards({commit}, fractionCode) {
-    let cards = await this.$axios.$get('/api/user/deck/' + fractionCode + '/card/available/');
+  async fetchAvailableCards({commit}, {fractionCode, filter}) {
+    let cards = await this.$axios.$get('/api/user/deck/' + fractionCode + '/card/available/?filter=' + filter);
     commit('setAvailableCards', {fractionCode, cards});
   },
   async addCard({state, commit}, {fractionCode, card}) {
