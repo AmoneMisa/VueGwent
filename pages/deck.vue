@@ -33,7 +33,7 @@
           <media :query="{minWidth: 971}">
             <div class="cards-collection__cards">
               <simplebar data-simplebar-auto-hide="false" class="simple-bar-cards">
-                <deck-available-cards :fraction="currentFraction" :filter="currentAvailableCardsFilter" v-if="user"/>
+                <deck-available-cards :fraction="currentFraction" :filter="currentCardsFilter" v-if="user"/>
                 <fraction-cards :fraction="currentFraction" :filter="currentCardsFilter" v-else/>
               </simplebar>
             </div>
